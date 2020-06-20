@@ -19,9 +19,10 @@
 
         <div id="content">
             <p>On this Page, some of Hypixels best bazaar trades are shown.</p>
-            <div ng-app="">
-                <p>Name : <input type="text" ng-model="name"></p>
-                <h1>Hello {{name}}</h1>
+            <div ng-app="ng_bazaar_app" ng-controller="ng_bazaar_ctrl">
+                First Name: <input type="text" ng-model="firstName"><br>
+                Last Name: <input type="text" ng-model="lastName"><br>
+                <p>{{firstName + " " + lastName}}</p>
             </div>
         </div>
     
