@@ -1,9 +1,37 @@
-body{
+body {
     margin: 0;
     pad: 0;
     font-family: sans-serif;
+    background-color: rgb(44, 51, 58);
+    color: rgb(235,235,235);  
 }
 
-header{
+header {
+
+    padding: 0, 50, 0, 50;
+    color: rgb(255,255,255);
+    margin: 5;
     text-align: center;
+}
+
+nav {
+    background-color: rgb(44, 51, 58);
+    padding: 0, 50, 0, 50;
+    color: rgb(255,255,255);
+    text-align: center;
+}
+
+#nav_home {
+  text-decoration: none;
+  color: #c7c7c7;
+}
+
+#nav_home:hover{
+  color: #aede00;
+}
+
+#content {
+    display: block;
+    position: relative;
+    transform: translate(25%, 0);
 }
