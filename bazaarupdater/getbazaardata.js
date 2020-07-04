@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
 import Sequelize, { STRING, FLOAT, INTEGER } from 'sequelize';
-import { cachedDataVersionTag } from 'v8';
+import fetch from 'node-fetch';
+
 
 const sequelize = new Sequelize('database', 'user', 'password', {
 	host: 'localhost',
