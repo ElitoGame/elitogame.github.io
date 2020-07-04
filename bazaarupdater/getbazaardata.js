@@ -193,7 +193,9 @@ module.exports = {
 				if(! await additem(id, min, max)) {
 					edititem(id, min, max)
 				}
-			} catch (e) {}
+			} catch (e) {console.log("github hates me! just kidding!")}
+
+
 		}
 		//console.log('Updated!');
 		return;
