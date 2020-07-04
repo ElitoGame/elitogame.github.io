@@ -1,9 +1,9 @@
 body {
-    margin: 0;
-    pad: 0;
+    margin: 10;
+    padding: 0;
     font-family: sans-serif;
     background-color: rgb(44, 51, 58);
-    color: rgb(235,235,235);  
+    color: rgb(235,235,235);
 }
 
 header {
@@ -33,5 +33,4 @@ nav {
 #content {
     display: block;
     position: relative;
-    transform: translate(25%, 0);
 }
