@@ -183,26 +183,29 @@ module.exports = {
 		return;
 		}
 
+		
+				
+		var ids = [];
+
+		for (i in products) {
+			//true = items added. //false = already exists or error. with ! means if true -> exists or error!
+			let id = products[i].product_id;
+			if (products[i].sell_summary["0"] == null || products[i].buy_summary["0"] == null) continue;
+			let min = products[i].sell_summary["0"].pricePerUnit;
+			let max = products[i].buy_summary["0"].pricePerUnit;
+			try {
+				if(! await additem(id, min, max)) {
+					edititem(id, min, max)
+				}
+			} catch (e) {}
+
+			ids.push(id);
+			console.log("added: " + id);
+		}
+
 		var app = angular.module('ng_bazaar_app', []);
 			app.controller('ng_bazaar_ctrl', function($scope) {
-				$scope.itemlist = [""];
-		
-
-			for (i in products) {
-				//true = items added. //false = already exists or error. with ! means if true -> exists or error!
-				let id = products[i].product_id;
-				if (products[i].sell_summary["0"] == null || products[i].buy_summary["0"] == null) continue;
-				let min = products[i].sell_summary["0"].pricePerUnit;
-				let max = products[i].buy_summary["0"].pricePerUnit;
-				try {
-					if(! await additem(id, min, max)) {
-						edititem(id, min, max)
-					}
-				} catch (e) {}
-
-				$scope.itemlist.push(id);
-				console.log("added: " + id);
-			}
+				$scope.itemlis = ids;
 		});
 		//console.log('Updated!');
 		return;
