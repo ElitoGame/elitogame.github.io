@@ -185,7 +185,7 @@ module.exports = {
 
 		var app = angular.module('ng_bazaar_app', []);
 			app.controller('ng_bazaar_ctrl', function($scope) {
-				$scope.itemlist = [];
+				$scope.itemlist = [""];
 		
 
 			for (i in products) {
