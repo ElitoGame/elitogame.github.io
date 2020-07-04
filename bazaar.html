@@ -1,4 +1,4 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <meta charset="UTF-8">
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -19,13 +19,14 @@
 
         <div id="content">
             <p>On this Page, some of Hypixels best bazaar trades are shown.</p>
-            <div ng-app="ng_bazaar_app" ng-controller="ng_bazaar_ctrl" ng-model="itemlist">
+            <div ng-app="ng_bazaar_app" ng-controller="ng_bazaar_ctrl">
+                <span id="hidden">{{itemlist}}</span>
                 <li ng-repeat="item in itemlist">
                     {{item}}
                 </li>
             </div>
         </div>
-    
+
 
         <footer>
             <p>This Website has been developed by ElitoGame and is hosted via Github Pages.</p>
