@@ -1,9 +1,4 @@
 
-var app = angular.module('ng_bazaar_app', []);
-app.controller('ng_bazaar_ctrl', function($scope) {
-    $scope.itemlist = ["stone","block","melon"];
-});
-
 window.onready = function(){
     const updater = require(`./bazaarupdater/getbazaardata.js`);
     updater.initialize();

@@ -183,20 +183,27 @@ module.exports = {
 		return;
 		}
 
-		for (i in products) {
-			//true = items added. //false = already exists or error. with ! means if true -> exists or error!
-			let id = products[i].product_id;
-			if (products[i].sell_summary["0"] == null || products[i].buy_summary["0"] == null) continue;
-			let min = products[i].sell_summary["0"].pricePerUnit;
-			let max = products[i].buy_summary["0"].pricePerUnit;
-			try {
-				if(! await additem(id, min, max)) {
-					edititem(id, min, max)
-				}
-			} catch (e) {console.log("github hates me! just kidding!")}
+		var app = angular.module('ng_bazaar_app', []);
+			app.controller('ng_bazaar_ctrl', function($scope) {
+				$scope.itemlist = [];
+		
 
+			for (i in products) {
+				//true = items added. //false = already exists or error. with ! means if true -> exists or error!
+				let id = products[i].product_id;
+				if (products[i].sell_summary["0"] == null || products[i].buy_summary["0"] == null) continue;
+				let min = products[i].sell_summary["0"].pricePerUnit;
+				let max = products[i].buy_summary["0"].pricePerUnit;
+				try {
+					if(! await additem(id, min, max)) {
+						edititem(id, min, max)
+					}
+				} catch (e) {}
 
-		}
+				$scope.itemlist.push(id);
+				console.log("added: " + id);
+			}
+		});
 		//console.log('Updated!');
 		return;
     },
@@ -349,4 +356,73 @@ function getCurrentTable() {//Returns a table based on the current weekday and t
 		return null;
 	}
 	return Table;
+}
+
+async function calcInvest(input_money, percent) {
+    const {products} = await fetch('https://api.hypixel.net/skyblock/bazaar?key=dd62008c-45c6-47c8-9575-aa8f1ca5928b').then(response => response.json());
+
+
+    for (i in products) {//loop through all products each day.
+        let id = products[i].product_id;
+        if(products[i].sell_summary.length == 0) continue;
+        if(products[i].buy_summary.length == 0) continue;
+        
+        let w_max = 90071992;//this weeks max
+        let w_min = 0;//this weeks min
+        for (day = 1; day < 8; day++) {
+            let d_max = 0;//this days max
+            let d_min = 90071992;//this days min
+
+            let Table = bazdata.getTable(day);
+            let product = await Table.findOne({where: {id: id}});
+            if (product == null) continue; //can't use break, would skip a ton of data!
+
+            //define the min-max
+            let min = product.get('min');
+            let max = product.get('max');
+
+            //savety calculation based on min-max average.
+            let average = (min + max) /2;
+            let p_average = average * percent;
+
+            min = min + p_average; //buy order + X% of average cost
+            max = max - p_average; //sell order - X% of average cost
+
+
+            //Daily min-max
+            if (min < d_min) d_min = min;
+            if (max > d_max) d_max = max;
+
+            //Weekly min-max
+            if (d_min > w_min) w_min = d_min;
+            if (d_max < w_max) w_max = d_max;
+        }
+
+        //profit calculations:
+        var amount = Math.floor(input_money / w_min);
+        if (amount > 70000) amount = 70000;
+        var prof = w_max * amount - w_min * amount;
+        //console.log(prof + " " + amount);
+
+        profits.set(id, prof);
+        amounts.set(id, amount);
+        buy_cost.set(id, w_min);
+        sell_cost.set(id, w_max);
+    }
+
+    //do not work perfectly yet!
+    profits = new Map([...profits.entries()].sort((a, b) => b[1] - a[1]));
+
+    var most_value = {};
+    let counter = 0;
+    profits.forEach(topten);
+    function topten(value, key, map) {
+        if (counter < top) {
+            most_value[counter] = key;
+            //console.log(most_value[counter] + ", " + profits.get(key));
+            counter++;
+        }
+    }
+    
+    return most_value;
 }
