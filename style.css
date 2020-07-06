@@ -1,17 +1,24 @@
 body {
-    margin: 10;
+    margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: rgb(44, 51, 58);
     color: rgb(235,235,235);
+
+    background-image: url("galaxy.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header {
-
     padding: 0, 50, 0, 50;
     color: rgb(255,255,255);
     margin: 5;
+    width: 90vw;
+    height: 20vh;
     text-align: center;
+    background-color: rgb(44, 51, 58);
+    border: 0;
+    border-radius: 5px;
 }
 
 nav {
@@ -30,11 +37,22 @@ nav {
   color: #aede00;
 }
 
-#content {
-    display: block;
-    position: relative;
-}
-
 #hidden {
   display: none;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+footer {
+  margin-top: auto;
+  background-color: rgb(51, 48, 48);
+  text-align: center;
+  color: #c7c7c7;
+  width: 100vw;
+  height: 7vh;
 }

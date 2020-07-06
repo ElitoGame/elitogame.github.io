@@ -7,30 +7,33 @@
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="code.js"></script>
         <script type="text/javascript" src="bazaarupdater/getbazaardata.js"></script>
+        <script src="github.com/bitinn/node-fetch"></script>
     </head>
     <body>
-        <header>
-            <h1>ElitoGame's Website - Bazaar</h1>
-        </header>
-        <nav>
-            <a href="index.html" id="nav_home" class="nav">Home</a>
-            <a href="bazaar.html" id="nav_bazaar" class="nav">Bazaar</a>
-        </nav>
-
-
-        <div id="content">
-            <p>On this Page, some of Hypixels best bazaar trades are shown.</p>
-            <div ng-app="ng_bazaar_app" ng-controller="ng_bazaar_ctrl">
-                <span id="hidden">{{itemlist}}</span>
-                <li ng-repeat="item in itemlist">
-                    {{item}}
-                </li>
+        <div id="layout">
+            <header>
+                <h1>ElitoGame's Website - Bazaar</h1>
+            </header>
+            <nav>
+                <a href="index.html" id="nav_home" class="nav">Home</a>
+                <!--<a href="bazaar.html" id="nav_bazaar" class="nav">Bazaar</a>-->
+            </nav>
+    
+    
+            <div id="content">
+                <p>On this Page, some of Hypixels best bazaar trades are shown.</p>
+                <div ng-app="ng_bazaar_app" ng-controller="ng_bazaar_ctrl">
+                    <span id="hidden">{{itemlist}}</span>
+                    <li ng-repeat="item in itemlist">
+                        {{item}}
+                    </li>
+                </div>
             </div>
+    
+    
+            <footer>
+                <p>This Website has been developed by ElitoGame and is hosted via Github Pages.</p>
+            </footer>
         </div>
-
-
-        <footer>
-            <p>This Website has been developed by ElitoGame and is hosted via Github Pages.</p>
-        </footer>
     </body>
 </html>
