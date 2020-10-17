@@ -20,11 +20,6 @@ header {
   background-color: rgb(44, 51, 58);
 }
 
-header h1 {
-  /* padding-bottom: 0.5vh; */
-  /* transform: translate(0, -50%); */
-}
-
 nav {
   padding-top: 10px;
   background-color: rgb(57, 71, 85);
