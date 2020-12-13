@@ -1,71 +1,161 @@
+:root {
+    font-size: 16px;
+    --basic-text-color: rgb(189, 189, 189);
+    --header-color: rgb(231, 231, 231);
+    --link-color: azure;
+    --link-hovercolor: rgb(179, 221, 221);
+    --background-color: rgb(18, 24, 26);
+
+    --nav-text: 1.2rem;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: rgb(26, 18, 18);
-  background-color: azure;
-  /* background-image: url("galaxy.jpg"); */
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-header {
-  padding: 0;
-  padding-top: 5px;
-  color: rgb(255,255,255);
-  margin: 0;
-  width: 100vw;
-  height: 10vh;
-  text-align: center;
-  background-color: rgb(44, 51, 58);
-}
-
-nav {
-  padding-top: 10px;
-  background-color: rgb(57, 71, 85);
-  color: rgb(255,255,255);
-  text-align: center;
-  word-spacing: 10px;
-  
-  width: 100vw;
-  height: 5vh;
-}
-
-.nav {
-  text-decoration: none;
-  color: #c7c7c7;
-}
-
-.nav:hover{
-  color: #aede00;
-}
-
-#hidden {
-  display: none;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: var(--basic-text-color);
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
+    display: grid;
+    grid-template: 
+        "header nav nav"
+        "header nav nav"
+        "main main main"
+        "footer footer footer";
+    grid-template-columns: 15rem 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+    margin-top: 1rem;
+
+}
+
+header {
+    grid-area: header;
+    width: min-content;
+    height: 90vh;
+}
+
+nav {
+    grid-area: nav;
+    font-size: var(--nav-text);
+    color: var(--link-color);
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--link-color);
+    height: 1.2rem;
+    /* width: 30rem; */
+    width: min-content;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: var(--link-hovercolor);
+}
+
+main {
+    grid-area: main;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 footer {
-  margin-top: auto;
-  background-color: rgb(51, 48, 48);
-  text-align: center;
-  color: #c7c7c7;
-  width: 100vw;
-  height: 7vh;
+    grid-area: footer;
+    /* padding-left: 2rem; */
+    margin-top: auto;
+    background-color: rgb(51, 48, 48);
+    text-align: center;
+    color: #c7c7c7;
+    width: 100%;
+    height: 7rm;
 }
 
 #img_profile {
-  float: left;
-  padding-top: 5px;
-  padding-right: 10px;
-  width: 120px;
-  height: 120px;
-  border: 0px solid transparent;
-  border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 0px solid transparent;
+    border-radius: 50%;
+}
+
+.vert {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--header-color);
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+#ing-name {
+    padding-left: calc(1rem + 6px);
+    margin: 0px;
+    letter-spacing: 7px;
+    width: min-content;
+}
+
+#irl-name {
+    margin-left: 1rem;
+}
+
+#galery {
+    font-size: 0px;
+}
+
+#galery img{
+    height: 19rem;
+}
+
+#galery video{
+    width: 30rem;
+    height: 30rem;
+}
+
+.line {
+    width: calc(100% - 0.1rem);
+    height: 0px;
+    border: 0.05rem #c7c7c7 solid;
+}
+
+.linethick {
+    border-width: 0.1rem;
+}
+
+.lineshort {
+    /* width: 5rem; */
+    width: 1fr;
+}
+.linepad {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.linecenter {
+    position: relative;
+    top: calc(var(--nav-text) / 2);
+}
+
+.linerot45 {
+    transform: rotate(45deg);
+    width: 5rem;
+}
+
+.linerot135 {
+    transform: rotate(135deg);
+    width: 10rem;
+    position: relative;
+    top: 0.6rem;
+    right: 1.2rem;
 }
