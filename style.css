@@ -23,14 +23,15 @@ body {
     display: grid;
     grid-template: 
         "header nav nav"
-        "header nav nav"
-        "main main main"
-        "footer footer footer";
+        "header nav nav";
+        /* "main main main"
+        "footer footer footer"; */
     grid-template-columns: 15rem 1fr 1fr;
     height: 100vh;
     width: 100%;
     margin-top: 1rem;
-
+    background-image: url(src/Art/portfolio_1.png);
+    background-size: cover;
 }
 
 header {
@@ -41,14 +42,16 @@ header {
 
 nav {
     grid-area: nav;
-    font-size: var(--nav-text);
-    color: var(--link-color);
-    display: flex;
-    justify-content: space-evenly;
-    width: 40%;
+    font-size: var(--nav-text);    
 }
 
-nav a {
+nav .dropitem {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+nav .dropitem a {
     text-decoration: none;
     color: var(--link-color);
     height: 1.2rem;
@@ -57,8 +60,12 @@ nav a {
     white-space: nowrap;
 }
 
-nav a:hover {
+nav .dropitem a:hover {
     color: var(--link-hovercolor);
+}
+
+nav .hamburger {
+    visibility: hidden;
 }
 
 main {
@@ -115,7 +122,7 @@ h2 {
 }
 
 #galery img{
-    height: 19rem;
+    height: 21rem;
 }
 
 #galery video{
@@ -158,4 +165,40 @@ h2 {
     position: relative;
     top: 0.6rem;
     right: 1.2rem;
+}
+
+.hex-image {
+    --hex-size: 3;
+    width: calc(340px / var(--hex-size));
+    height: calc(300px / var(--hex-size));
+    background: url("src/profile.png") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    left: 70px;
+    /*transform: rotate(10deg);  need to rotation ? */
+}
+/* Left shape */
+.hex-image:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: 3px;    
+    border-right: calc(85px / var(--hex-size)) solid transparent;
+    border-bottom: calc(150px / var(--hex-size)) solid var(--background-color) ;
+    border-top: calc(150px / var(--hex-size)) solid var(--background-color) ;
+}
+/* Right shape */
+.hex-image:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 0;
+    height: 3px;    
+    border-left: calc(85px / var(--hex-size)) solid transparent;
+    border-bottom: calc(150px / var(--hex-size)) solid var(--background-color);
+    border-top: calc(150px / var(--hex-size)) solid var(--background-color) ;
 }

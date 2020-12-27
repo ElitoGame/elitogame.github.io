@@ -2,6 +2,7 @@ var galery = new Map();
 $(document).ready(function(){
   saveImgScales();
   scaleImgHeight();
+  initHamburger();
 });
 
 window.onresize =  function(){
@@ -42,6 +43,7 @@ function updateScale(scale) {
     let wid = galery.get(element).width;
     width += wid;
   });
+  if (scale.length == 0) return;
   let height = galery.get(scale[0]).height; //Height of the individual images
   let gal_width = $('#galery').width();
   let ratio =  height / width; // ratio of all the images together to the height
@@ -84,4 +86,18 @@ function getHeight(e) {
 function getWidth(e) {
   let w = $(e).css('width');
   return parseInt(w.slice(0, w.length - 2));
+}
+
+function initHamburger() {
+  const burger = $('nav .hamburger')
+  let menuOpen = false;
+  burger.click(function() {
+    if (!menuOpen) {
+      burger.addClass('open');
+      menuOpen = true;
+    } else {
+      burger.removeClass('open');
+      menuOpen = false;
+    }
+  })
 }
