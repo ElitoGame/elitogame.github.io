@@ -2,7 +2,7 @@
 Base styling & variables: 
 *********/
 :root {
-    font-size: 16px;
+    /* font-size: 16px; */
     --basic-text-color: rgb(189, 189, 189);
     --header-color: rgb(231, 231, 231);
     --link-color: azure;
@@ -142,9 +142,13 @@ Lines:
 }
 
 .lineshort {
-    /* width: 5rem; */
     width: 1fr;
 }
+
+.linefixshort {
+    width: 20%;
+}
+
 .linepad {
     margin-left: 0.3rem;
     margin-right: 0.3rem;
