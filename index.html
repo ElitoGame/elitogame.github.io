@@ -5,14 +5,14 @@
 <head>
     <title>ElitoGame's Portfolio</title>
     <style>
-        @import url(main.css);
+        @import url(css/main.css);
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
 </head>
 
 <body>
-    <div id="layout">
+    <div id="header-layout">
         <header>
             <h1 id="ing-name">ElitoGame</h1>
             <h1 id="irl-name" class="vert">lias</h1>
@@ -38,12 +38,27 @@
             <section id="about-me">
                 <h2 id="about-me-header">About</h2>
                 <div class="line"></div>
-                <figure id="about-me-profile">
-                    <!-- <img src="src/profile.png" alt="Image not found!" id="img_profile" class="hex-image"> -->
-                    <div class="hex-image"></div>
-                    <!-- <figcaption id="img_profile_cap"><i>Credit to Anja</i></figcaption> -->
-                </figure>
-                <p>Hi!</p>
+                <div id="about-layout">
+                    <figure id="about-profile">
+                        <!-- <img src="src/profile.png" alt="Image not found!" id="img_profile" class="hex-image"> -->
+                        <div class="hex-image"></div>
+                        <!-- <figcaption id="img_profile_cap"><i>Credit to Anja</i></figcaption> -->
+                    </figure>
+                    <p id="about-name" class="vert">ElitoGame</p>
+                    <article id="about-text">
+                        <p>Hi!</p>
+                        <p>I'm Elias aka ElitoGame (Elito). I'm a 
+                            <span class="ph_my_age">Age</span> years old hobby coder living in Austria.
+                            For the past <span class="ph_code_age">Age</span> years, I have enjoy 
+                            working on various code projects , as well as playing or working 
+                            on video games in my freetime. Games are what got
+                            me into coding in the first place and they keep sparking me 
+                            with inspiration. Apart from gaming and coding I also enjoy 
+                            doing some creative projects, mainly digital drawing and 
+                            working in 3D using free Software like Blender or Unreal Engine 4.
+                        </p>
+                    </article>
+                </div>
             </section>
             <section id="art-portfolio">
                 <h2 id="art-portfolio-header">Art Portfolio</h2>
@@ -89,6 +104,7 @@
 
         <footer>
             <p>This Website has been developed by ElitoGame and is hosted via Github Pages.</p>
+            <p>Thanks to Anja for the awesome Profile Picture!</p>
         </footer>
 </body>
 

@@ -1,3 +1,6 @@
+/*********
+Base styling & variables: 
+*********/
 :root {
     font-size: 16px;
     --basic-text-color: rgb(189, 189, 189);
@@ -19,7 +22,10 @@ body {
     background-size: cover;
 }
 
-#layout {
+/*********
+Important Layout Stuff without nav: 
+*********/
+#header-layout {
     display: grid;
     grid-template: 
         "header nav nav"
@@ -30,7 +36,7 @@ body {
     height: 100vh;
     width: 100%;
     margin-top: 1rem;
-    background-image: url(src/Art/portfolio_1.png);
+    background-image: url(../src/Art/portfolio_1.png);
     background-size: cover;
 }
 
@@ -40,9 +46,63 @@ header {
     height: 90vh;
 }
 
+main {
+    grid-area: main;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+footer {
+    grid-area: footer;
+    /* padding-left: 2rem; */
+    margin-top: auto;
+    padding-top: 0.5rem;
+    background-color: rgb(51, 48, 48);
+    text-align: center;
+    color: #c7c7c7;
+    width: 100%;
+    height: 3rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/*********
+Headers & vertical text: 
+*********/
+.vert {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+h1 {
+    color: var(--header-color);
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+#ing-name {
+    padding-left: calc(1rem + 6px);
+    margin: 0px;
+    letter-spacing: 7px;
+    width: min-content;
+}
+
+#irl-name {
+    margin-left: 1rem;
+}
+
+/*********
+Nav bar (responsive): 
+*********/
 nav {
     grid-area: nav;
-    font-size: var(--nav-text);    
+    font-size: var(--nav-text);
+    padding-top: 0.6rem;
+    margin-right: 2rem; 
 }
 
 nav .dropitem {
@@ -68,68 +128,9 @@ nav .hamburger {
     visibility: hidden;
 }
 
-main {
-    grid-area: main;
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
-
-footer {
-    grid-area: footer;
-    /* padding-left: 2rem; */
-    margin-top: auto;
-    background-color: rgb(51, 48, 48);
-    text-align: center;
-    color: #c7c7c7;
-    width: 100%;
-    height: 7rm;
-}
-
-#img_profile {
-    width: 120px;
-    height: 120px;
-    border: 0px solid transparent;
-    border-radius: 50%;
-}
-
-.vert {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-}
-
-h1 {
-    font-size: 2rem;
-    color: var(--header-color);
-}
-
-h2 {
-    margin-bottom: 0.5rem;
-}
-
-#ing-name {
-    padding-left: calc(1rem + 6px);
-    margin: 0px;
-    letter-spacing: 7px;
-    width: min-content;
-}
-
-#irl-name {
-    margin-left: 1rem;
-}
-
-#galery {
-    font-size: 0px;
-}
-
-#galery img{
-    height: 21rem;
-}
-
-#galery video{
-    width: 30rem;
-    height: 30rem;
-}
-
+/*********
+Lines: 
+*********/
 .line {
     width: calc(100% - 0.1rem);
     height: 0px;
@@ -167,15 +168,49 @@ h2 {
     right: 1.2rem;
 }
 
+/*********
+About-Me: 
+*********/
+#about-layout {
+    --hex-size: 2;
+    display: grid;
+    grid-template: 
+        "blurb name profile"
+        "blurb name profile";
+    grid-template-columns: 1fr 1rem calc(340px / var(--hex-size));
+}
+
+#about-profile {
+    grid-area: profile;
+    width: calc(340px / var(--hex-size));
+    left: -3.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+#about-name {
+    grid-area: name;
+    margin-top: 1.2rem;
+    height: 9rem;
+    width: 1rem;
+    position: relative;
+    left: -1rem;
+}
+
+#about-text {
+    grid-area: blurb;
+}
+
+/*********
+Hex-image: 
+*********/
 .hex-image {
-    --hex-size: 3;
     width: calc(340px / var(--hex-size));
     height: calc(300px / var(--hex-size));
-    background: url("src/profile.png") no-repeat;
+    background: url("../src/profile.png") no-repeat;
     background-size: cover;
     background-position: center center;
     position: relative;
-    left: 70px;
     /*transform: rotate(10deg);  need to rotation ? */
 }
 /* Left shape */
@@ -201,4 +236,21 @@ h2 {
     border-left: calc(85px / var(--hex-size)) solid transparent;
     border-bottom: calc(150px / var(--hex-size)) solid var(--background-color);
     border-top: calc(150px / var(--hex-size)) solid var(--background-color) ;
+}
+
+/*********
+Galery: 
+*********/
+#galery {
+    font-size: 0px;
+    /*Video & Img default height:*/
+    --galery-element-height: 21rem;
+}
+
+#galery img{
+    height: var(--galery-element-height);
+}
+
+#galery video{
+    height: var(--galery-element-height);
 }

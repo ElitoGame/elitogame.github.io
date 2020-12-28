@@ -1,4 +1,6 @@
-
+/*********
+CSS code for less than or equal to 680px width: 
+*********/
 @media screen and (max-width: 680px) {
     .dropitem {
         visibility: hidden;
@@ -11,7 +13,7 @@
         visibility: visible;
         cursor: pointer;
         position: absolute;
-        left: calc(100vw - 2rem);
+        left: calc(100vw - 2.5rem);
         top: 1.8rem;
         width: 1rem;
         height: 1rem;

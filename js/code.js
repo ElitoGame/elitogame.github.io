@@ -1,14 +1,26 @@
+/*********
+Global required variables: 
+*********/
 var galery = new Map();
+
+/*********
+On ready-event IMPORTANT!
+And resize event
+*********/
 $(document).ready(function(){
   saveImgScales();
   scaleImgHeight();
   initHamburger();
+  modifyPlaceholders();
 });
 
 window.onresize =  function(){
   scaleImgHeight();
 }
 
+/*********
+Image Scaling: 
+*********/
 function saveImgScales() {
   $('#galery').children().each(function () {
     galery.set( this, {
@@ -88,6 +100,9 @@ function getWidth(e) {
   return parseInt(w.slice(0, w.length - 2));
 }
 
+/*********
+Handle the below 680px Navbar hamburger:
+*********/
 function initHamburger() {
   const burger = $('nav .hamburger')
   let menuOpen = false;
@@ -100,4 +115,22 @@ function initHamburger() {
       menuOpen = false;
     }
   })
+}
+
+/*********
+Modify PlaceHolders:
+*********/
+function modifyPlaceholders() {
+  $('.ph_my_age').each(function(i) {
+    $(this).text(_calculateAge(new Date(2002, 03, 30)));
+  })
+  $('.ph_code_age').each(function(i) {
+    $(this).text(_calculateAge(new Date(2018, 11, 29)));
+  })
+}
+
+function _calculateAge(date) { // birthday is a date
+  var ageDifMs = Date.now() - date.getTime();
+  var ageDate = new Date(ageDifMs); // miliseconds from epoch
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
