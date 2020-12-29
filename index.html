@@ -82,7 +82,7 @@
             <section id="it-experience">
                 <h2 id="it-experience-header">IT Experience</h2>
                 <div class="line"></div>
-                <p>I am a self tought Developer. Over the past 1 1/2 years, I have been working on various smaller
+                <p>I am a self tought Developer. Over the past <span class="ph_code_age">Age</span> years, I have been working on various smaller
                     projects and
                     aquired knowledge in the following languages:</p>
                 <ul>
@@ -98,13 +98,190 @@
                     <li>Basic Python</li>
                 </ul>
                 <article>
-                    <h3>Github Page <div class="line linefixshort"></div></h3>
-                    <div class="slideshow">
-                        <img src="" alt="" class="slideimg">
+                    <h3>DnDBot <div class="line linefixshort"></div></h3>
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <span class="slideshow-loader"></span>
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/DnDBot/img (6).png" style="width:100%">
+                            <div class="text">Character Sheet (left) | Dices (middle) | Help and Reload Command (right)</div>
+                        </div>
+                    
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/DnDBot/img (7).png" style="width:100%">
+                            <div class="text">Command Documentation (left) | All Players stats (right)</div>
+                        </div>
+
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
                     </div>
+                    <br>
+                    
+                    <!-- The dots/circles - js added -->
+                    <div style="text-align:center" class="dotainer"></div> 
                     <div class="it-article-text">
-                        <h4>Some Title:</h4>
-                        <p>Hello there</p>
+                        <div class="quick-profile">
+                            <h4>Quick Profile:</h4>
+                            <p><strong>Type:</strong> Discord Bot</p>
+                            <p><strong>Language(s):</strong> JavaScript, Bash, SQL</p>
+                            <p><strong>APIs/ORMs:</strong> Discord API, Sequilize ORM, Giphy SDK</p>
+                        </div>
+                        <p>
+                            This project was made for me and a couple of friends who wanted to play DnD.<br>
+                            Due to the current situation we couldn't meet in real live, so we used the platform Discord.
+                            In order to support us, I coded a Bot using the Discord API which would allow us to create
+                            and edit a Character sheet as well as a set of dices, accessible for everyone of us as long 
+                            as the Bot was running.
+                        </p>
+                        <p>
+                            The Bot is running on my Laptop started by a Batch Script whenever I turn my PC on. I wrote 
+                            the Bot using JavaScript, the Discord API and NodeJS in order to host it.<br>
+                            Some of the Bots features required me to store data, so I used the Database SQLite and accessed 
+                            it with the ORM Sequilize. For a joke, I also implemented the Giphy SDK which allowed 
+                            me to display a random "shuffle" GIF upon the command "?shuffle".
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <h3>Kineticraft Java Plugin <div class="line linefixshort"></div></h3>
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <span class="slideshow-loader"></span>
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Kineticraft/img (5).png" style="width:100%">
+                            <div class="text">Cosmetic Particles above players (left) | Shop Profit Report (right)</div>
+                        </div>
+                    
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Kineticraft/img (6).png" style="width:100%">
+                            <div class="text">Dynamic NPC (left) | Commands with AutoComplete (right)</div>
+                        </div>
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                    </div>
+                    <br>
+                    
+                    <!-- The dots/circles - js added -->
+                    <div style="text-align:center" class="dotainer"></div> 
+                    <div class="it-article-text">
+                        <div class="quick-profile">
+                            <h4>Quick Profile:</h4>
+                            <p><strong>Type:</strong> Java Minecraft Plugin</p>
+                            <p><strong>Language(s):</strong> Java, SQL</p>
+                            <p><strong>Implements:</strong> Multiple other plugins including Grief Prevention, 
+                                CoreProtect, WorldGuard and more</p>
+                        </div>
+                        <p>
+                            This was my first big project and I am still working on it every so often. I wrote 
+                            this plugin for the Kineticraft Minecraft server [kineticraft.net] and I am 
+                            keeping it updated, modifying it depending on the need of the server.<br>
+                            Currently there are 14 commands, 19 custom mechanics and some additional features
+                            like NPCs with custom GUIs and customizable Items.
+                        </p>
+                        <p>
+                            A bunch of those mechanics are adjustable using a <i>config.yml</i> and the NPC, 
+                            GUI and Item feature even get their own configuration file which allow me to modify 
+                            the gameplay on the fly without needing to restart the server.<br>
+                            The code for this plugin is kept on Github, but we decided on keeping it private in 
+                            order to avoid possible exploits.<br>
+                            Of course this plugin also has to store a bunch of data and so I used <i>.json</i> 
+                            files but switched a few months ago to a SQLite database using the 
+                            <i>java.sql</i> package as it was way more organized.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <h3>GoDot & Electron <div class="line linefixshort"></div></h3>
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <span class="slideshow-loader"></span>
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Other/img (1).png" style="width:100%">
+                            <div class="text">Node System Writing (GoDot)</div>
+                        </div>
+                    
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Other/img (2).png" style="width:100%">
+                            <div class="text">Selction in Node System (GoDot)</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Other/img (3).png" style="width:100%">
+                            <div class="text">Node System (Electron)</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Other/img (4).png" style="width:100%">
+                            <div class="text">Marauders Game (Browser)</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Other/img (5).png" style="width:100%">
+                            <div class="text">Marauders Game (GoDot)</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <img src="src/SlideShow/Other/img (6).png" style="width:100%">
+                            <div class="text">2D Platformer (GoDot)</div>
+                        </div>
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                    </div>
+                    <br>
+                    
+                    <!-- The dots/circles - js added -->
+                    <div style="text-align:center" class="dotainer"></div> 
+                    <div class="it-article-text">
+                        <div class="quick-profile">
+                            <h4>Quick Profile:</h4>
+                            <p><strong>Type:</strong> GoDot Project | Electron App | Browser Game</p>
+                            <p><strong>Language(s):</strong> GDScript, JavaScript</p>
+                        </div>
+                        <p>
+                            I also worked on a bunch of other projects which only made it into the proof of concept stage.
+                            Here, I wanted to showcase some of my favourites:
+                        </p>
+                        <ul class="it-article-text-sub-list">
+                            <li>
+                                <h5>NodeIt:</h5>
+                                The goal was to make a App allowing me to take notes and plan out ideas using
+                                a system of nodes.<br>
+                                My first approach of using the GoDot Gameengine was kind of
+                                successful, but I struggled with a few of it's options, so I switched to
+                                Electron, a framework that enables me to create Desktop Apps using the tools
+                                I was used from the browser. I didn't finish this project either due to school
+                                based time limitations, but I was able to create a nice scaling GUI,
+                                spawn in nodes, connect them, scale the board & move around. In my GoDot attempt,
+                                I was able to spawn in nodes, insert text, remove individual nodes & move around.
+                            </li>
+                            <li>
+                                <h5>Marauders:</h5>
+                                I started the project Marauders as a Birthday present for someone who loves Harry
+                                Potter and the <i>Marauders Map</i> and so, I made two versions of it. 
+                                The first one was made for the Browser using a lot of JS in order to calculate the
+                                footsteps position and movement. <br>
+                                The second one was made using the GoDot Game Engine, which made creating a game
+                                far easier and also allowed me to use TileSets and the inbuilt collision Engine.
+                            </li>
+                            <li>
+                                <h5>Simple 2D Platformer:</h5>
+                                I had some Experience in the GoDot Game Engine because I created a simple Platformer
+                                before. For this project, I coded a simple enemy which you could jump on, and coded
+                                in the basic movement for the character including a double jump and wall jump.
+                            </li>
+                        </ul>
                     </div>
                 </article>
             </section>

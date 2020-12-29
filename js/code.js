@@ -2,6 +2,7 @@
 Global required variables: 
 *********/
 var galery = new Map();
+var slideIndex = 1;
 
 /*********
 On ready-event IMPORTANT!
@@ -12,6 +13,7 @@ $(document).ready(function(){
   scaleImgHeight();
   initHamburger();
   modifyPlaceholders();
+  setupSlides();
 });
 
 window.onresize =  function(){
@@ -130,7 +132,50 @@ function modifyPlaceholders() {
 }
 
 function _calculateAge(date) { // birthday is a date
-  var ageDifMs = Date.now() - date.getTime();
-  var ageDate = new Date(ageDifMs); // miliseconds from epoch
+  let ageDifMs = Date.now() - date.getTime();
+  let ageDate = new Date(ageDifMs); // miliseconds from epoch
   return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
+
+/*********
+Slideshow:
+*********/
+
+function setupSlides() {
+  $('.slideshow-container').each(function() {
+    let i = 0;
+    let len = $(this).find('.mySlides').length;
+    $(this).find('.mySlides').each(function(e) {
+      i++;
+      $(this).parent().parent().find('.dotainer').append(`<span class="dot" onclick="currentSlide(this, ${i})"></span>`);
+      $(this).append(`<div class="numbertext">${i} / ${len}</div>`);
+    });
+  });
+  document.querySelectorAll('.slideshow-loader').forEach(function(e) {showSlides(e, slideIndex)});
+}
+
+// Next/previous controls
+function plusSlides(e, n) {
+  showSlides(e, slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(e, n) {
+  showSlides(e, slideIndex = n);
+}
+
+function showSlides(e, n) {
+  let i;
+  let slides = e.parentElement.parentElement.getElementsByClassName("mySlides");
+  let dots = e.parentElement.parentElement.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+} 
