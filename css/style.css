@@ -115,17 +115,19 @@ h2 {
 
 .svg {
     position: absolute;
-    right: -313px;
-    top: 70px;
+    right: -35vh;
+    top: 15vh;
     overflow: hidden;
+    width: 70vh;
+    height: 70vh;
 }
 #hero {
     position: absolute;
-    left: -80px;
-    top: 300px;
+    left: -20vh;
+    top: 33vh;
     overflow: hidden;
-    width: 600px;
-    height: 600px;
+    width: 90vh;
+    height: 90vh;
 }
 
 /*********
