@@ -83,5 +83,19 @@ CSS code for less than or equal to 680px width:
         transition: opacity .15s ease-out;
     }
     
+    #about-text {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .it-intro {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .it-article-text {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 
 }

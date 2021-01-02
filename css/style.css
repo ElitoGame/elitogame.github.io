@@ -5,21 +5,36 @@ Base styling & variables:
     /* font-size: 16px; */
     --basic-text-color: rgb(189, 189, 189);
     --header-color: rgb(231, 231, 231);
-    --link-color: azure;
-    --link-hovercolor: rgb(179, 221, 221);
+    --link-color:  rgb(178, 213, 214);
+    --link-hovercolor: rgb(146, 204, 204);
     --background-color: rgb(18, 24, 26);
-
+    --footer-color: rgb(51, 48, 48);
+    --footer-text-color:  #c7c7c7;
     --nav-text: 1.2rem;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Comic Neue', sans-serif;
     color: var(--basic-text-color);
     background-color: var(--background-color);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hovercolor);
 }
 
 /*********
@@ -34,10 +49,11 @@ Important Layout Stuff without nav:
         "footer footer footer"; */
     grid-template-columns: 15rem 1fr 1fr;
     height: 100vh;
+    min-height: 750px;
     width: 100%;
     margin-top: 1rem;
-    background-image: url(../src/Art/portfolio_1.png);
-    background-size: cover;
+    /* background-image: url(../src/Art/portfolio_1.png);
+    background-size: cover; */
 }
 
 header {
@@ -57,9 +73,9 @@ footer {
     /* padding-left: 2rem; */
     margin-top: auto;
     padding-top: 0.5rem;
-    background-color: rgb(51, 48, 48);
+    background-color: var(--footer-color);
     text-align: center;
-    color: #c7c7c7;
+    color: var(--footer-text-color);
     width: 100%;
     height: 3rem;
 }
@@ -82,6 +98,8 @@ h1 {
 
 h2 {
     margin-bottom: 0.5rem;
+    font-family: 'Gugi', cursive;
+    font-size: 2rem;
 }
 
 #ing-name {
@@ -95,6 +113,21 @@ h2 {
     margin-left: 1rem;
 }
 
+.svg {
+    position: absolute;
+    right: -313px;
+    top: 70px;
+    overflow: hidden;
+}
+#hero {
+    position: absolute;
+    left: -80px;
+    top: 300px;
+    overflow: hidden;
+    width: 600px;
+    height: 600px;
+}
+
 /*********
 Nav bar (responsive): 
 *********/
@@ -103,6 +136,7 @@ nav {
     font-size: var(--nav-text);
     padding-top: 0.6rem;
     margin-right: 2rem; 
+    font-family: 'Gugi', cursive;
 }
 
 nav .dropitem {
@@ -173,6 +207,45 @@ Lines:
 }
 
 /*********
+Gradient-texts: 
+*********/
+.gradient-header {
+    background: linear-gradient(90deg,#00ff73,#2edfe5);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: max-content;
+}
+
+.gradient-header-vert {
+    background: linear-gradient(180deg,#00ff73,#2edfe5);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: max-content;
+}
+
+.gradient-header2 {
+    background: linear-gradient(90deg,#c2ffdd,#aaf9fc);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: max-content;
+}
+
+.gradient-header2-vert {
+    background: linear-gradient(180deg,#c2ffdd,#aaf9fc);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: max-content;
+}
+
+/*********
 About-Me: 
 *********/
 #about-layout {
@@ -203,6 +276,8 @@ About-Me:
 
 #about-text {
     grid-area: blurb;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 /*********
@@ -364,13 +439,13 @@ IT-Experience:
 .quick-profile {
     background-color: rgb(44, 44, 44);
     border-radius: 5px;
-    width: 20rem;
+    max-width: 20rem;
     padding-left: 1rem;
     padding-top: 1px;
     padding-bottom: 1px;
 }
 .quick-profile > * {
-    width: 19rem;
+    max-width: 19rem;
     padding: 0px;
     margin: 5px;
 }
@@ -390,4 +465,14 @@ IT-Experience:
     position: relative;
     margin: auto;
     align-items: center;
+}
+
+.it-article-text {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.it-intro {
+    margin-left: 4rem;
+    margin-right: 4rem;
 }

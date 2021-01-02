@@ -4,6 +4,11 @@
 
 <head>
     <title>ElitoGame's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Megrim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">  
     <style>
         @import url(css/main.css);
     </style>
@@ -14,8 +19,8 @@
 <body>
     <div id="header-layout">
         <header>
-            <h1 id="ing-name">ElitoGame</h1>
-            <h1 id="irl-name" class="vert">lias</h1>
+            <h1 id="ing-name" class="gradient-header">ElitoGame</h1>
+            <h1 id="irl-name" class="vert gradient-header-vert">lias</h1>
         </header>
         <nav>
             <div class="hamburger">
@@ -23,20 +28,23 @@
             </div>
             <div class="dropitem">
                 <div class="line lineshort linecenter linepad"></div>
-                <a href="#about-me" class="nav">About</a>
+                <a href="#about-me" class="nav gradient-header">About</a>
                 <div class="line lineshort linecenter linepad"></div>
-                <a href="#art-portfolio" class="nav">Art Portfolio</a>
+                <a href="#it-experience" class="nav gradient-header">IT Experience</a>
                 <div class="line lineshort linecenter linepad"></div>
-                <a href="#it-experience" class="nav">IT Experience</a>
+                <a href="#art-portfolio" class="nav gradient-header">Art Portfolio</a>
                 <div class="line lineshort linecenter linepad"></div>
             </div>
         </nav>
+        <video src="src/Planet/icon_animation.webm" class="svg" autoplay loop></video>
+        <img src="src/hero_gray.png" alt="" id="hero">
+        
     </div>
         <!-- <img src="src/Final.png" alt="Image not found!" id="deco"> -->
 
         <main>
             <section id="about-me">
-                <h2 id="about-me-header">About</h2>
+                <h2 id="about-me-header" class="gradient-header">About</h2>
                 <div class="line"></div>
                 <div id="about-layout">
                     <figure id="about-profile">
@@ -44,10 +52,11 @@
                         <div class="hex-image"></div>
                         <!-- <figcaption id="img_profile_cap"><i>Credit to Anja</i></figcaption> -->
                     </figure>
-                    <p id="about-name" class="vert">ElitoGame</p>
+                    <p id="about-name" class="vert gradient-header2-vert">ElitoGame</p>
                     <article id="about-text">
-                        <p>Hi!</p>
-                        <p>I'm Elias aka ElitoGame (Elito). I'm a 
+                        <p>
+                            Hi!<br>
+                            I'm Elias aka ElitoGame (Elito). I'm a 
                             <span class="ph_my_age">Age</span> years old hobby coder living in Austria.
                             For the past <span class="ph_code_age">Age</span> years, I have enjoy 
                             working on various code projects , as well as playing or working 
@@ -60,45 +69,29 @@
                     </article>
                 </div>
             </section>
-            <section id="art-portfolio">
-                <h2 id="art-portfolio-header">Art Portfolio</h2>
-                <div class="line"></div>
-                <div id="galery">
-                    <img src="src\Art\portfolio_1.png" alt="">
-                    <img src="src\Art\portfolio_2.png" alt="">
-                    <img src="src\Art\portfolio_3.png" alt="">
-                    <img src="src\Art\portfolio_4.png" alt="">
-                    <img src="src\Art\portfolio_5.png" alt="">
-                    <img src="src\Art\portfolio_6.png" alt="">
-                    <img src="src\Art\portfolio_7.png" alt="">
-                    <img src="src\Art\portfolio_8.png" alt="">
-                    <img src="src\Art\portfolio_9.png" alt="">
-                    <img src="src\Art\portfolio_10.png" alt="">
-                    <img src="src\Art\portfolio_11.png" alt="">
-                    <!-- <video src="src\Art\portfolio_12.webm" autoplay muted loop> </video> -->
-                    <!-- <video src="src\Art\portfolio_13.webm" autoplay muted loop> </video> -->
-                </div>
-            </section>
             <section id="it-experience">
-                <h2 id="it-experience-header">IT Experience</h2>
+                <h2 id="it-experience-header" class="gradient-header">IT Experience</h2>
                 <div class="line"></div>
-                <p>I am a self tought Developer. Over the past <span class="ph_code_age">Age</span> years, I have been working on various smaller
-                    projects and
-                    aquired knowledge in the following languages:</p>
-                <ul>
-                    <li>Java</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JQuery</li>
-                    <li>Angular</li>
-                    <li>php</li>
-                    <li>Visual Scripting in Unreal Engine</li>
-                    <li>GDscript</li>
-                    <li>Basic Python</li>
-                </ul>
+                <div class="it-intro">
+                    <p>As mentioned in <a href="#about-me">About me</a>, I've been teaching myself how to code for 
+                        <span class="ph_code_age">Age</span> years. In this time, I have been working on various smaller
+                        projects and aquired knowledge in the various code and markup languages:</p>
+                    <ul>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JQuery</li>
+                        <li>Angular</li>
+                        <li>php</li>
+                        <li>Visual Scripting in Unreal Engine</li>
+                        <li>GDscript</li>
+                        <li>Basic Python</li>
+                    </ul>
+                    <p>Below I want to showcase some of the projects I have been working on.</p>
+                </div>
                 <article>
-                    <h3>DnDBot <div class="line linefixshort"></div></h3>
+                    <h3 class="gradient-header2">DnDBot <div class="line lineshort"></div></h3>
                     <!-- Slideshow container -->
                     <div class="slideshow-container">
                         <span class="slideshow-loader"></span>
@@ -147,7 +140,7 @@
                     </div>
                 </article>
                 <article>
-                    <h3>Kineticraft Java Plugin <div class="line linefixshort"></div></h3>
+                    <h3 class="gradient-header2">Kineticraft Java Plugin <div class="line lineshort"></div></h3>
                     <!-- Slideshow container -->
                     <div class="slideshow-container">
                         <span class="slideshow-loader"></span>
@@ -199,7 +192,7 @@
                     </div>
                 </article>
                 <article>
-                    <h3>GoDot & Electron <div class="line linefixshort"></div></h3>
+                    <h3 class="gradient-header2">GoDot & Electron <div class="line lineshort"></div></h3>
                     <!-- Slideshow container -->
                     <div class="slideshow-container">
                         <span class="slideshow-loader"></span>
@@ -258,11 +251,11 @@
                                 <h5>NodeIt:</h5>
                                 The goal was to make a App allowing me to take notes and plan out ideas using
                                 a system of nodes.<br>
-                                My first approach of using the GoDot Gameengine was kind of
+                                My first approach of using the GoDot Game Engine was kind of
                                 successful, but I struggled with a few of it's options, so I switched to
                                 Electron, a framework that enables me to create Desktop Apps using the tools
                                 I was used from the browser. I didn't finish this project either due to school
-                                based time limitations, but I was able to create a nice scaling GUI,
+                                based time limitations, but I was able to create a nice GUI,
                                 spawn in nodes, connect them, scale the board & move around. In my GoDot attempt,
                                 I was able to spawn in nodes, insert text, remove individual nodes & move around.
                             </li>
@@ -285,7 +278,25 @@
                     </div>
                 </article>
             </section>
-
+            <section id="art-portfolio">
+                <h2 id="art-portfolio-header" class="gradient-header">Art Portfolio</h2>
+                <div class="line"></div>
+                <div id="galery">
+                    <img src="src\Art\portfolio_1.png" alt="">
+                    <img src="src\Art\portfolio_2.png" alt="">
+                    <img src="src\Art\portfolio_3.png" alt="">
+                    <img src="src\Art\portfolio_4.png" alt="">
+                    <img src="src\Art\portfolio_5.png" alt="">
+                    <img src="src\Art\portfolio_6.png" alt="">
+                    <img src="src\Art\portfolio_7.png" alt="">
+                    <img src="src\Art\portfolio_8.png" alt="">
+                    <img src="src\Art\portfolio_9.png" alt="">
+                    <img src="src\Art\portfolio_10.png" alt="">
+                    <img src="src\Art\portfolio_11.png" alt="">
+                    <!-- <video src="src\Art\portfolio_12.webm" autoplay muted loop> </video> -->
+                    <!-- <video src="src\Art\portfolio_13.webm" autoplay muted loop> </video> -->
+                </div>
+            </section>
         </main>
 
 
