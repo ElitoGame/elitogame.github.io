@@ -124,11 +124,11 @@ h2 {
 }
 #hero {
     position: absolute;
-    left: -20vh;
-    top: 33vh;
+    left: -10vh;
+    top: 53vh;
     overflow: hidden;
-    width: 90vh;
-    height: 90vh;
+    width: 50vh;
+    height: 50vh;
     pointer-events: none;
 }
 
