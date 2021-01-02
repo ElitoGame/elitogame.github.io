@@ -100,6 +100,7 @@ h2 {
     margin-bottom: 0.5rem;
     font-family: 'Gugi', cursive;
     font-size: 2rem;
+    width: fit-content;
 }
 
 #ing-name {
@@ -115,10 +116,10 @@ h2 {
 
 .svg {
     position: absolute;
-    right: -35vh;
+    right: 0px;
     top: 15vh;
     overflow: hidden;
-    width: 70vh;
+    width: 35vh;
     height: 70vh;
 }
 #hero {
@@ -128,6 +129,7 @@ h2 {
     overflow: hidden;
     width: 90vh;
     height: 90vh;
+    pointer-events: none;
 }
 
 /*********
