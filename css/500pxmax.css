@@ -3,7 +3,7 @@
         grid-template: 
             "name profile profile"
             "blurb blurb blurb";
-        grid-template-columns: 1rem calc(340px / var(--hex-size) 1fr);
+        grid-template-columns: 30px calc(340px / var(--hex-size)) 1fr;
     }
     #about-profile {
         padding-left: 0px;

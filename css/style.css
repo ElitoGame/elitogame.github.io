@@ -49,11 +49,11 @@ Important Layout Stuff without nav:
         "footer footer footer"; */
     grid-template-columns: 15rem 1fr 1fr;
     height: 100vh;
-    min-height: 750px;
     width: 100%;
     margin-top: 1rem;
     /* background-image: url(../src/Art/portfolio_1.png);
     background-size: cover; */
+    overflow: hidden;
 }
 
 header {
@@ -141,11 +141,12 @@ nav {
     padding-top: 0.6rem;
     margin-right: 2rem; 
     font-family: 'Gugi', cursive;
-    width: max-content;
+    width: 100%;
+    height: max-content;
 }
 
 nav .dropitem {
-    width: 1rem;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -264,9 +265,8 @@ About-Me:
 #about-profile {
     grid-area: profile;
     width: calc(340px / var(--hex-size));
-    left: -3.5rem;
     position: relative;
-    padding-left: 1.5rem;
+    margin-left: 0px;
 }
 
 #about-name {
@@ -387,7 +387,7 @@ Slideshow:
 .text {
   color: #f2f2f2;
   font-size: 15px;
-  padding: 8px 12px;
+  padding: 8px 0px;
   position: absolute;
   bottom: 8px;
   width: 100%;
