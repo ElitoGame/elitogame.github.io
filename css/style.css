@@ -479,4 +479,14 @@ IT-Experience:
 .it-intro {
     margin-left: 4rem;
     margin-right: 4rem;
+    display: grid;
+    grid-template: 
+        "intro list"
+        "linker list";
+    grid-template-columns: 1fr 1fr;
+    margin-left: 5rem;
+}
+
+#it-intro-text {
+    height: max-content;
 }

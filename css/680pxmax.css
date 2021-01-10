@@ -99,6 +99,10 @@ CSS code for less than or equal to 680px width:
     .it-intro {
         margin-left: 1rem;
         margin-right: 1rem;
+        grid-template: 
+        "intro"
+        "list"
+        "linker";
     }
 
     .it-article-text {
