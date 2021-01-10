@@ -1,5 +1,5 @@
 .env
-src/Planet/img
-src/Planet/svg
-src/Planet/icon_blender.blend
-src/Hero/TempFiles
+rsc/Planet/img
+rsc/Planet/svg
+rsc/Planet/icon_blender.blend
+rsc/Hero/TempFiles

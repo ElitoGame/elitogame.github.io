@@ -1,6 +1,7 @@
 /*********
 CSS code for less than or equal to 680px width: 
 *********/
+
 @media screen and (max-width: 680px) {
     .dropitem {
         visibility: hidden;
@@ -8,15 +9,12 @@ CSS code for less than or equal to 680px width:
     .dropitem .line {
         visibility: hidden;
     }
-
     nav {
         width: max-content;
     }
-    
     nav .dropitem {
         width: 1rem;
     }
-
     nav .hamburger {
         visibility: visible;
         cursor: pointer;
@@ -31,32 +29,28 @@ CSS code for less than or equal to 680px width:
         height: 0.2rem;
         background: var(--header-color);
         border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(255,101,47,.2);
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
         transition: all .5s ease-in-out;
         position: relative;
         top: 50%
     }
-
     nav .hamburger .burgerbtn::before, nav .hamburger .burgerbtn::after {
         content: '';
         width: 1rem;
         height: 0.2rem;
         background: var(--header-color);
         border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(255,101,47,.2);
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
         transition: all .5s ease-in-out;
         position: absolute;
         /* sleft: calc(100vw - 2rem); */
     }
-
     nav .hamburger .burgerbtn::before {
         transform: translateY(-0.3rem);
     }
-
     nav .hamburger .burgerbtn::after {
         transform: translateY(0.3rem);
     }
-
     .hamburger.open .burgerbtn {
         transform: translateX(-50px);
         background: transparent;
@@ -68,17 +62,14 @@ CSS code for less than or equal to 680px width:
     .hamburger.open .burgerbtn::after {
         transform: rotate(-45deg) translate(35px, 35px);
     }
-
-    .hamburger.open ~ .dropitem {
+    .hamburger.open~.dropitem {
         visibility: visible;
-        background: rgb(12,14,14);
-        background: linear-gradient(36deg, rgba(12,14,14,1) 0%, rgba(18,7,38,1) 48%, rgba(17,21,22,1) 100%); 
-
+        background: rgb(12, 14, 14);
+        background: linear-gradient(36deg, rgba(12, 14, 14, 1) 0%, rgba(18, 7, 38, 1) 48%, rgba(17, 21, 22, 1) 100%);
         position: absolute;
         right: 1rem;
         width: 9rem;
         z-index: 2;
-        
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -87,27 +78,19 @@ CSS code for less than or equal to 680px width:
         margin-top: 2rem;
         padding: 0.8rem;
         border-radius: 5px;
-    
         transition: opacity .15s ease-out;
     }
-    
     #about-text {
         margin-left: 1rem;
         margin-right: 1rem;
     }
-
     .it-intro {
         margin-left: 1rem;
         margin-right: 1rem;
-        grid-template: 
-        "intro"
-        "list"
-        "linker";
+        grid-template: "intro" "list" "linker";
     }
-
     .it-article-text {
         margin-left: 2rem;
         margin-right: 2rem;
     }
-
 }
