@@ -93,4 +93,8 @@ CSS code for less than or equal to 680px width:
         margin-left: 2rem;
         margin-right: 2rem;
     }
+
+    .galery-card {
+        width: 50%;
+    }
 }

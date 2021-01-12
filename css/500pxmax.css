@@ -14,4 +14,8 @@
     #about-name {
         height: 9rem;
     }
+
+    .galery-card {
+        width: 100%;
+    }
 }

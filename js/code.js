@@ -9,8 +9,8 @@ On ready-event IMPORTANT!
 And resize event
 *********/
 $(document).ready(function () {
-  saveImgScales();
-  scaleImgHeight();
+  // saveImgScales();
+  // scaleImgHeight();
   videoHover();
   initHamburger();
   modifyPlaceholders();

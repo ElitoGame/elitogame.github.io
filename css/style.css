@@ -332,17 +332,44 @@ Galery:
 
 #galery {
     font-size: 0px;
-    /*Video & Img default height:*/
-    --galery-element-height: 21rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
-#galery img {
-    height: var(--galery-element-height);
+.galery-card {
+    width: 16.666667%;
 }
 
-#galery video {
-    height: var(--galery-element-height);
+.galery-card-front,.galery-card-back {
+    backface-visibility: hidden;
+    transition: transform .6s linear;
+}
+
+.galery-card-front img {
     position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.galery-card-front {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.galery-card-back {
+    position: relative;
+    bottom: 100%;
+    height: 100%;
+    background-color: #201f20;
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.galery-card:hover > .galery-card-front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.galery-card:hover > .galery-card-back {
+    transform: perspective(600px) rotateY(360deg);
 }
 
 #galery video:after {
