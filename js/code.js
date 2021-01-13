@@ -15,11 +15,12 @@ $(document).ready(function () {
   initHamburger();
   modifyPlaceholders();
   setupSlides();
+  addGaleryClick();
 });
 
-window.onresize = function () {
-  scaleImgHeight();
-}
+// window.onresize = function () {
+//   scaleImgHeight();
+// }
 
 /*********
 Image Scaling: 
@@ -194,4 +195,65 @@ function showSlides(e, n) {
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
-} 
+}
+
+/*********
+Art Portfolio Image:
+*********/
+function addGaleryClick() {
+  let container = $('#galery-single-container');
+  $('.galery-card').click(function() {
+    let el = $(this).children('img');
+    let src = el.attr('src').replace('/preview', '').replace('_preview', '');
+    if ($(this).hasClass('galery-card-video')) {
+      container.append(`<video src="${src.replace('png', 'webm')}" 
+      class="galery-single galery-single-video" loop autoplay></video>`)[0];
+      $('.galery-single-video').get(0).load();
+      $('.galery-single-video').ready(function () {
+        document.querySelector('.galery-single-video').play();
+      })
+    } else {
+      container.append(`<img src="${src}" class="galery-single galery-single-video"></img>`); 
+    }
+    lockScroll();
+    container.css('visibility','visible');
+    container.focus();
+  })
+
+  $('#galery-single-close').click(function() {
+    closeContainer()
+  })
+
+  container.keydown(function (evt) {//27
+    if (evt.which === 27) {
+      closeContainer()
+    }
+  })
+}
+
+function closeContainer() {
+  unlockScroll();
+  $('#galery-single-container').css('visibility','hidden');
+  $('.galery-single').remove();
+}
+
+function lockScroll () {
+  // lock scroll position, but retain settings for later
+  var scrollPosition = [
+    self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+    self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+  ];
+  var html = jQuery('html'); // it would make more sense to apply this to body, but IE7 won't have that
+  html.data('scroll-position', scrollPosition);
+  html.data('previous-overflow', html.css('overflow'));
+  html.css('overflow', 'hidden');
+  window.scrollTo(scrollPosition[0], scrollPosition[1]);
+}
+
+function unlockScroll() {
+  // un-lock scroll position
+  var html = jQuery('html');
+  var scrollPosition = html.data('scroll-position');
+  html.css('overflow', html.data('previous-overflow'));
+  window.scrollTo(scrollPosition[0], scrollPosition[1])
+}
