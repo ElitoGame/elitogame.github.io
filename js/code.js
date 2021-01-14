@@ -197,6 +197,7 @@ function showSlides(e, n) {
   dots[slideIndex - 1].className += " active";
 }
 
+let gallery_single_arrow_cooldown = 0;
 /*********
 Art Portfolio Image:
 *********/
@@ -205,36 +206,83 @@ function addGaleryClick() {
   $('.galery-card').click(function() {
     let el = $(this).children('img');
     let src = el.attr('src').replace('/preview', '').replace('_preview', '');
-    if ($(this).hasClass('galery-card-video')) {
-      container.append(`<video src="${src.replace('png', 'webm')}" 
-      class="galery-single galery-single-video" loop autoplay></video>`)[0];
-      $('.galery-single-video').get(0).load();
-      $('.galery-single-video').ready(function () {
-        document.querySelector('.galery-single-video').play();
-      })
-    } else {
-      container.append(`<img src="${src}" class="galery-single galery-single-video"></img>`); 
-    }
+    openGalerySingle($(this).hasClass('galery-card-video'), src);
     lockScroll();
     container.css('visibility','visible');
     container.focus();
   })
 
   $('#galery-single-close').click(function() {
-    closeContainer()
+    closeContainer();
+  })
+
+  $('#galery-single-artist-name').click(function() {
+    closeContainer();
   })
 
   container.keydown(function (evt) {//27
     if (evt.which === 27) {
       closeContainer()
     }
+    if (isGallerySingleOpen()) {
+      let src = $('.galery-single').attr('src');
+      let el_count = $('#galery').children().length - 1;
+      let id = parseInt(src.match('(?<=portfolio_).+?(?=[\_.])')[0]);
+      let id_next;
+      if (gallery_single_arrow_cooldown < Date.now()) {
+         if (evt.which === 39) { // ->
+          id_next = id + 1;
+          if (id_next > el_count) id_next = 1;
+          $(`#galery-card-${id_next}`).hasClass('galery-card-video')
+          removeGalleryInfo();
+          openGalerySingle($(`#galery-card-${id_next}`).hasClass('galery-card-video'), 
+          src.replace(id, id_next))
+        }
+        if (evt.which === 37) { // <-
+          id_next = id - 1;
+          if (id_next < 1) id_next = el_count;
+          removeGalleryInfo();
+          openGalerySingle($(`#galery-card-${id_next}`).hasClass('galery-card-video'),
+          src.replace(id, id_next))
+        }
+        gallery_single_arrow_cooldown = Date.now() + 300; //0.3 second cooldown for the arrows.
+      }
+    }
   })
+}
+
+function openGalerySingle(isVideo, src) {
+  let container = $('#galery-single-container');
+  if (isVideo) {
+    container.append(`<video src="${src.replace('png', 'webm')}" 
+    class="galery-single galery-single-video" loop autoplay></video>`)[0];
+    $('.galery-single-video').get(0).load();
+    $('.galery-single-video').ready(function () {
+      document.querySelector('.galery-single-video').play();
+    })
+  } else {
+    container.append(`<img src="${src.replace('webm', 'png')}" class="galery-single galery-single-img"></img>`); 
+  }
+  // Add the additional information
+  let id = src.match('(?<=portfolio_).+?(?=[\_.])')[0];
+  console.log(id)
+  container.append(`<h3 class=galery-single-title>
+    ${$(`#galery-card-${id} .galery-card-title`).get(0).innerHTML}</h3>`);
+}
+
+function isGallerySingleOpen() {
+  return $('#galery-single-container').css('visibility') === 'visible';
 }
 
 function closeContainer() {
   unlockScroll();
   $('#galery-single-container').css('visibility','hidden');
+  removeGalleryInfo();
+}
+
+function removeGalleryInfo() {
   $('.galery-single').remove();
+  $('.galery-single-title').remove();
 }
 
 function lockScroll () {
