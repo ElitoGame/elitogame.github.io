@@ -94,6 +94,28 @@ CSS code for less than or equal to 680px width:
         margin-right: 2rem;
     }
 
+    .it-preview {
+        flex-direction: column;
+    }
+
+    .it-preview-info {
+        width: 100%;
+        margin: 1rem 0px;
+    }
+    
+    .it-preview-img{
+       width: 100%;
+    }
+
+    .it-preview-info-c {
+        width: max-content;
+        max-width: 80%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .galery-card {
         width: 50%;
     }

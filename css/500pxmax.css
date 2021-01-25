@@ -18,4 +18,8 @@
     .galery-card {
         width: 100%;
     }
+
+    .it-article-text {
+        margin: 0px;
+    }
 }

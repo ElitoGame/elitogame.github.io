@@ -18,9 +18,11 @@ $(document).ready(function () {
   addGaleryClick();
 });
 
-// window.onresize = function () {
-//   scaleImgHeight();
-// }
+window.onresize = function () {
+  if (isItSingleOpen()) {
+    //TODO add height of background adjusting when rescaling here
+  }
+}
 
 /*********
 Image Scaling: 
@@ -208,6 +210,7 @@ function addGaleryClick() {
     let src = el.attr('src').replace('/preview', '').replace('_preview', '');
     openGalerySingle($(this).hasClass('galery-card-video'), src);
     lockScroll();
+    $('.cover-background').height(container.get(0).scrollHeight);
     container.css('visibility','visible');
     container.focus();
   })
@@ -265,7 +268,7 @@ function openGalerySingle(isVideo, src) {
   }
   // Add the additional information
   let id = src.match('(?<=portfolio_).+?(?=[\_.])')[0];
-  console.log(id)
+  // console.log(id)
   container.append(`<h3 class=galery-single-title>
     ${$(`#galery-card-${id} .galery-card-title`).get(0).innerHTML}</h3>`);
 }
@@ -277,12 +280,43 @@ function isGallerySingleOpen() {
 function closeContainer() {
   unlockScroll();
   $('#galery-single-container').css('visibility','hidden');
+  $('.it-article').css('visibility','hidden');
   removeGalleryInfo();
+  $('.cover-background').each(function() {
+    $(this).height('1vh');
+  });
 }
 
 function removeGalleryInfo() {
   $('.galery-single').remove();
   $('.galery-single-title').remove();
+}
+
+function openItExperienceSingle(event) {
+  if (!event) {
+    event = window.event;
+  };
+  var el = (event.target || event.srcElement);
+  var art = $(el.parentNode.parentNode.parentNode.parentNode.parentNode.childNodes[3]);
+  lockScroll();
+  art.css('visibility','visible');
+  art.focus();
+  $('.cover-background-it').each(function() {
+    $(this).height(art.get(0).scrollHeight);
+  });
+
+  art.keydown(function (evt) {//27
+    if (evt.which === 27) {
+      closeContainer()
+    }
+  });
+}
+
+function isItSingleOpen() {
+  $('.it-article').each(function() {
+    if ($(this).css('visibility') === 'visible')
+      return true;
+  });
 }
 
 function lockScroll () {

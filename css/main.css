@@ -2,6 +2,9 @@
 Manage the different style sheets: 
 *********/
 @import url(style.css);
+@import url(style/about-me.css);
+@import url(style/galery.css);
+@import url(style/it-experience.css);
 @import url(1600pxmax.css);
 @import url(1100pxmax.css);
 @import url(680pxmax.css);

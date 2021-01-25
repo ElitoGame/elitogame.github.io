@@ -1,0 +1,74 @@
+/*********
+About-Me: 
+*********/
+
+#about-layout {
+    --hex-size: 2;
+    display: grid;
+    grid-template: "blurb name profile" "blurb name profile";
+    grid-template-columns: 1fr 1rem calc(340px / var(--hex-size));
+}
+
+#about-profile {
+    grid-area: profile;
+    width: calc(340px / var(--hex-size));
+    position: relative;
+    margin-left: 0px;
+}
+
+#about-name {
+    grid-area: name;
+    margin-top: 1.2rem;
+    height: 9rem;
+    width: 1rem;
+    position: relative;
+    left: -1rem;
+}
+
+#about-text {
+    grid-area: blurb;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+/*********
+Hex-image: 
+*********/
+
+.hex-image {
+    width: calc(340px / var(--hex-size));
+    height: calc(300px / var(--hex-size));
+    background: url("../../rsc/profile.png") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    /*transform: rotate(10deg);  need to rotation ? */
+}
+
+/* Left shape */
+
+.hex-image:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: 3px;
+    border-right: calc(85px / var(--hex-size)) solid transparent;
+    border-bottom: calc(150px / var(--hex-size)) solid var(--background-color);
+    border-top: calc(150px / var(--hex-size)) solid var(--background-color);
+}
+
+/* Right shape */
+
+.hex-image:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 0;
+    height: 3px;
+    border-left: calc(85px / var(--hex-size)) solid transparent;
+    border-bottom: calc(150px / var(--hex-size)) solid var(--background-color);
+    border-top: calc(150px / var(--hex-size)) solid var(--background-color);
+}
