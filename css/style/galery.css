@@ -97,6 +97,7 @@ Galery:
     height: 100vh;
     z-index: 200;
     overflow-y: scroll; /*auto*/
+    scroll-behavior: smooth;
 }
 
 #galery-scroll-y {

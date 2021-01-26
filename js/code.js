@@ -313,10 +313,12 @@ function openItExperienceSingle(event) {
 }
 
 function isItSingleOpen() {
+  let vis = false;
   $('.it-article').each(function() {
     if ($(this).css('visibility') === 'visible')
-      return true;
+      vis = true;
   });
+  return vis;
 }
 
 function lockScroll () {
@@ -339,3 +341,33 @@ function unlockScroll() {
   html.css('overflow', html.data('previous-overflow'));
   window.scrollTo(scrollPosition[0], scrollPosition[1])
 }
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  let totop = document.getElementById("totop");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    totop.style.display = "block";
+  } else {
+    totop.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  if (isGallerySingleOpen()) {
+    document.querySelector('#galery-single-container').scrollTop = 0;
+    $('#galery-single-container').focus();
+  } else if (isItSingleOpen()) {
+    $('.it-article').each(function() {
+      if ($(this).css('visibility') === 'visible') {
+        $(this).scrollTop(0);
+        $(this).focus();
+      }
+    });
+  } else {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+} 

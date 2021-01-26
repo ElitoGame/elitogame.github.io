@@ -266,4 +266,127 @@ Covering Backgrounds:
 
 .it-article-text {
     position: absolute;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
+
+.it-intro {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    display: grid;
+    grid-template: "intro list" "linker list";
+    grid-template-columns: 1fr 1fr;
+    margin-left: 5rem;
+}
+
+#it-intro-text {
+    height: max-content;
+    grid-area: intro;
+}
+
+#it-languages {
+    background-color: var(--footer-color);
+    border-radius: 5px;
+    padding-left: 20px;
+    margin: 0px 10px;
+    margin-top: 16px;
+    grid-area: list;
+}
+
+#it-linker {
+    grid-area: linker;
+}
+
+.loading {
+    position: absolute;
+    width: 1rem;
+    height: 2.1rem;
+    /* transform: rotate(45deg); */
+    
+}
+
+.loading::after {
+    content: '';
+    display: block;
+    height: 2.1rem;
+    width: 1rem;
+    background-color: #f2f2f2;
+    animation: loading-main 3s infinite;
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    display: block;
+    height: 1rem;
+    width: 2.1rem;
+    /* transform: rotate(90deg); */
+    background-color: #ff0000;
+    /* animation: loading-before 3s infinite; */
+}
+
+@keyframes loading-main {
+    0% {
+        height: 2.1rem;
+        width: 1rem;
+    }
+    49% {
+        height: 0rem;
+        width: 1rem;
+    }
+    51% {
+        height: 1rem;
+        width: 0rem;
+    }
+    100% {
+        height: 1rem;
+        width: 2.1rem;
+    }
+}
+
+@keyframes loading-before {
+    0% {
+        height: 1rem;
+        width: 2.1rem;
+    }
+    49% {
+        height: 1rem;
+        width: 0rem;
+    }
+    51% {
+        height: 0rem;
+        width: 0rem;
+    }
+    100% {
+        width: 1rem;
+        height: 2.1rem;
+    }
+}
+
+#totop {
+    display: none;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    font-size: 2rem;
+    background-color: rgb(44, 44, 44);
+    border-radius: 50%;
+    border-color: transparent;
+    z-index: 300;
+    transition: 1s;
+}
+
+#totop i {
+    position: relative;
+    top: -0.4rem;
+}
+
+#totop:hover {
+    color: cyan;
+}
+

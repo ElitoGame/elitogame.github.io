@@ -240,6 +240,7 @@ New System below:
     height: 100vh;
     z-index: 200;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .it-article * {
