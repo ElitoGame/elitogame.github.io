@@ -160,47 +160,57 @@
         <section id="it-experience">
             <h2 id="it-experience-header" class="gradient-header">IT Experience</h2>
             <div class="line"></div>
-            <div class="it-intro">
-                <p id="it-intro-text">As mentioned in <a href="#about-me">About me</a>, I've been teaching myself how to
-                    code for
-                    <span class="ph_code_age">Age</span> years. In this time, I have been working on various smaller
-                    projects and aquired knowledge in the various code and markup languages.
-                </p>
-                <ul id="it-languages">
-                    <u>Known Languages:</u><br>
-                    <li>Java</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JQuery</li>
-                    <li>Angular</li>
-                    <li>php</li>
-                    <li>Visual Scripting in Unreal Engine</li>
-                    <li>GDscript</li>
-                    <li>Basic Python</li>
-                </ul>
-                <p id="it-linker">Below I want to showcase some of the projects I have been working on.</p>
-            </div>
             <div class="it-articles">
                 <article>
-                    <div class="it-preview uneven">
+                    <div class="it-preview uneven it-intro">
+                        <div class="it-preview-info">
+                            <div class="it-preview-info-c">
+                                <h3 class="gradient-header2 it-preview-title">Intro</h3>
+                                <div class="it-preview-text">
+                                    As mentioned in <a href="#about-me">About me</a>, I've been teaching myself how to
+                                    code for
+                                    <span class="ph_code_age">Age</span> years. In this time, I have been working on various smaller
+                                    projects and aquired knowledge in the various code and markup languages. <br>
+                                    Below I want to showcase some of the projects I have been working on.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="it-preview-img">
+                            <ul id="it-languages">
+                                <u>Known Languages:</u><br>
+                                <li>Java</li>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JQuery</li>
+                                <li>Angular</li>
+                                <li>php</li>
+                                <li>Visual Scripting in Unreal Engine</li>
+                                <li>GDscript</li>
+                                <li>Basic Python</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="it-preview even">
+                        <img src="rsc/SlideShow/DnDBot/preview.png" alt="DnDBot Preview" class="it-preview-img">
                         <div class="it-preview-info">
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">DnDBot</h3>
                                 <div class="it-preview-text">
-                                    A ChatBot using the Discord API. eeeeeeeeeeee eeeeeeeeee eeeeeeeeeeee eeeeeeeee<br>
+                                    A ChatBot using the Discord API and a Database to support me and my friends playing DnD.<br>
                                     <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
                                 </div>
                             </div>
                         </div>
-                        <img src="rsc/SlideShow/DnDBot/preview.png" alt="DnDBot Preview" class="it-preview-img">
                     </div>
                     <div class="it-article" tabindex="0">
+                        <button class="it-article-close" onclick="closeContainer()">⨉</button>
                         <div class="it-article-text">
-                            <button class="it-article-close" onclick="closeContainer()">⨉</button>
-                            <h3 class="gradient-header2 it-preview-title">DnDBot</h3>
                             <img src="rsc/SlideShow/DnDBot/img (6).png" style="width:100%"
                             alt="Character Sheet (left) | Dices (middle) | Help and Reload Command (right)">
+                            <h3 class="gradient-header2 it-preview-title">DnDBot</h3>
                             <div class="quick-profile">
                                 <h4>Quick Profile:</h4>
                                 <p><strong>Type:</strong> Discord Bot</p>
@@ -214,8 +224,6 @@
                                 and edit a Character sheet as well as a set of dices, accessible for everyone of us as long
                                 as the Bot was running.
                             </p>
-                            <img src="rsc/SlideShow/DnDBot/img (7).png" style="width:100%"
-                            alt="Command Documentation (left) | All Players stats (right)">
                             <p>
                                 The Bot is running on my Laptop started by a Batch Script whenever I turn my PC on. I wrote
                                 the Bot using JavaScript, the Discord API and NodeJS in order to host it.<br>
@@ -223,26 +231,30 @@
                                 it with the ORM Sequilize. For a joke, I also implemented the Giphy SDK which allowed
                                 me to display a random "shuffle" GIF upon the command "?shuffle".
                             </p>
+                            <img src="rsc/SlideShow/DnDBot/img (7).png" style="width:100%"
+                            alt="Command Documentation (left) | All Players stats (right)">
                         </div>
                         <div class="cover-background cover-background-it"></div>
                     </div>
                 </article>
                 <article>
-                    <div class="it-preview even">
-                        <img src="rsc/SlideShow/Kineticraft/preview.png" alt="Kineticraft Preview" class="it-preview-img">  
+                    <div class="it-preview uneven">
                         <div class="it-preview-info">
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">Kineticraft</h3>
                                 <div class="it-preview-text">
-                                    A Minecraft Plugin. <br>
+                                    A Minecraft Java Plugin developed for the Kineticraft Minecraft server. 
+                                    It is my largest project to date, used by over 3000 people and being constantly 
+                                    updated based on the needs of the server.<br>
                                     <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
                                 </div>
                             </div>
                         </div>
+                        <img src="rsc/SlideShow/Kineticraft/preview.png" alt="Kineticraft Preview" class="it-preview-img">  
                     </div>
                     <div class="it-article" tabindex="0">
+                        <button class="it-article-close" onclick="closeContainer()">⨉</button>
                         <div class="it-article-text">
-                            <button class="it-article-close" onclick="closeContainer()">⨉</button>
                             <h3 class="gradient-header2 it-preview-title">Kineticraft</h3>
                             <img src="rsc/SlideShow/Kineticraft/img (5).png" style="width:100%">
                             <div class="quick-profile">
@@ -275,21 +287,23 @@
                     </div>
                 </article>
                 <article>
-                    <div class="it-preview uneven">  
+                    <div class="it-preview even">  
+                        <img src="rsc/SlideShow/Other/preview.png" alt="GoDot & Electron Preview" class="it-preview-img">
                         <div class="it-preview-info">
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">GoDot & Electron</h3>
                                 <div class="it-preview-text">
-                                    GoDot & Electron Projects <br>
+                                    For me, games are a great way to learn new things. So I've also given Gameengines
+                                    such as GoDot, Unity or Unreal Engine a go. In GoDot, I attempted a Platformer, a
+                                    Top Down Game and a Note System using nodes.<br>
                                     <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
                                 </div>
                             </div>
                         </div>
-                        <img src="rsc/SlideShow/Other/preview.png" alt="GoDot & Electron Preview" class="it-preview-img">
                     </div>
                     <div class="it-article" tabindex="0">
+                        <button class="it-article-close" onclick="closeContainer()">⨉</button>
                         <div class="it-article-text">
-                            <button class="it-article-close" onclick="closeContainer()">⨉</button>
                             <h3 class="gradient-header2 it-preview-title">GoDot & Electron</h3>
                             <img src="rsc/SlideShow/Other/img (1).png" style="width:100%">
                             <img src="rsc/SlideShow/Other/img (2).png" style="width:100%">
@@ -339,6 +353,44 @@
                         <div class="cover-background cover-background-it"></div>
                     </div>
                 </article>
+                <article>
+                    <div class="it-preview uneven">
+                        <div class="it-preview-info">
+                            <div class="it-preview-info-c">
+                                <h3 class="gradient-header2 it-preview-title">Web Development</h3>
+                                <div class="it-preview-text">
+                                    I really enjoy Web Development and this Website is my flagship. Over the last
+                                    few months, I have been working on this Project in my freetime preparing it to work
+                                    as my online portfolio for both my IT and Art experience.<br>
+                                    <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="rsc/SlideShow/WebDevelopment/preview.png" alt="Website Preview" class="it-preview-img">  
+                    </div>
+                    <div class="it-article" tabindex="0">
+                        <button class="it-article-close" onclick="closeContainer()">⨉</button>
+                        <div class="it-article-text">
+                            <h3 class="gradient-header2 it-preview-title">Web Development</h3>
+                            <div class="quick-profile">
+                                <h4>Quick Profile:</h4>
+                                <p><strong>Type:</strong> Website</p>
+                                <p><strong>Language(s):</strong> JavaScript, JQuery, HTML, CSS</p>
+                            </div>
+                            <p>
+                                For the last couple of months it became clear to me that I was going to apply for a
+                                IT based University. So in order to compensate for my lack of proper IT education in school,
+                                I started working on this Website to showcase my projects and experience.
+                            </p>
+                            <p>
+                                This Website is not my first attempt at a Website, though it's the first one reaching 
+                                this state of completion. Hosted via GitHub pages, the process of this Website's Development is 
+                                documented on my <a href="https://github.com/ElitoGame/elitogame.github.io">GitHub</a>.
+                            </p>
+                        </div>
+                        <div class="cover-background cover-background-it"></div>
+                    </div>
+                </article>
             </div>
         </section>
         <button onclick="topFunction()" id="totop"> <i class="fas fa-angle-up"></i></button> 
@@ -347,7 +399,7 @@
 
     <!-- Credits (Footer) -->
     <footer>
-        <p>This Website has been developed by ElitoGame and is hosted via Github Pages.</p>
+        <p>This Website has been developed by ElitoGame and is hosted via GitHub Pages.</p>
         <p>Thanks to Anja for the awesome Profile Picture!</p>
         <p>Thanks to Thomas for creating the DnD Bot Logo!</p>
         <p>Thanks to Alex Agod for letting me use the Kineticraft Server Logo!</p>

@@ -22,4 +22,8 @@
     .it-article-text {
         margin: 0px;
     }
+
+    #it-experience article {
+        width: 90%;
+    }
 }

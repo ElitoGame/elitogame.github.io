@@ -67,7 +67,7 @@ main {
 footer {
     grid-area: footer;
     margin-top: auto;
-    padding-top: 0.5rem;
+    padding: 1rem 0px;
     background-color: var(--footer-color);
     text-align: center;
     color: var(--footer-text-color);
@@ -262,39 +262,6 @@ Covering Backgrounds:
     /* z-index: 101; */
     background-color: var(--background-color);
     opacity: 0.95;
-}
-
-.it-article-text {
-    position: absolute;
-    margin-left: 5rem;
-    margin-right: 5rem;
-}
-
-.it-intro {
-    margin-left: 4rem;
-    margin-right: 4rem;
-    display: grid;
-    grid-template: "intro list" "linker list";
-    grid-template-columns: 1fr 1fr;
-    margin-left: 5rem;
-}
-
-#it-intro-text {
-    height: max-content;
-    grid-area: intro;
-}
-
-#it-languages {
-    background-color: var(--footer-color);
-    border-radius: 5px;
-    padding-left: 20px;
-    margin: 0px 10px;
-    margin-top: 16px;
-    grid-area: list;
-}
-
-#it-linker {
-    grid-area: linker;
 }
 
 .loading {
