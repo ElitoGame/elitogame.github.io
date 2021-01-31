@@ -3,32 +3,25 @@ About-Me:
 *********/
 
 #about-layout {
-    --hex-size: 2;
-    display: grid;
-    grid-template: "blurb name profile" "blurb name profile";
-    grid-template-columns: 1fr 1rem calc(340px / var(--hex-size));
+    --hex-size: 1.5;
+    width: 70%;
+    margin: 3rem 0px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #about-profile {
-    grid-area: profile;
     width: calc(340px / var(--hex-size));
     position: relative;
-    margin-left: 0px;
-}
-
-#about-name {
-    grid-area: name;
-    margin-top: 1.2rem;
-    height: 9rem;
-    width: 1rem;
-    position: relative;
-    left: -1rem;
+    margin: auto;
 }
 
 #about-text {
-    grid-area: blurb;
     margin-left: 5rem;
     margin-right: 5rem;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 /*********

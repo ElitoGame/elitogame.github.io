@@ -1,7 +1,7 @@
 /*********
 Global required variables: 
 *********/
-var galery = new Map();
+var gallery = new Map();
 var slideIndex = 1;
 
 /*********
@@ -14,7 +14,7 @@ $(document).ready(function () {
   initHamburger();
   modifyPlaceholders();
   setupSlides();
-  addGaleryClick();
+  addgalleryClick();
 });
 
 window.onresize = function () {
@@ -25,7 +25,7 @@ window.onresize = function () {
       $(this).height($('.it-article:visible').get(0).scrollHeight);
     });
   } else if (isGallerySingleOpen()) {
-      $('#cover-background-galery').height($('#galery-single-container').get(0).scrollHeight);
+      $('#cover-background-gallery').height($('#gallery-single-container').get(0).scrollHeight);
   }
 }
 
@@ -33,8 +33,8 @@ window.onresize = function () {
 Image Scaling: 
 *********/
 function saveImgScales() {
-  $('#galery').children().each(function () {
-    galery.set(this, {
+  $('#gallery').children().each(function () {
+    gallery.set(this, {
       width: $(this).width(),
       height: $(this).height()
     });
@@ -42,11 +42,11 @@ function saveImgScales() {
 }
 
 function scaleImgHeight() {
-  let size = $('#galery').width();
+  let size = $('#gallery').width();
   let sizet = 0;
   let scale = [];
-  $('#galery').children().each(function () {
-    let width = galery.get(this).width;
+  $('#gallery').children().each(function () {
+    let width = gallery.get(this).width;
     sizet += width;
     // console.log("i: " + sizet);
     if (sizet >= size) {
@@ -63,12 +63,12 @@ function scaleImgHeight() {
 function updateScale(scale) {
   let width = 0; // width of all unscaled images in one row
   scale.forEach(element => {
-    let wid = galery.get(element).width;
+    let wid = gallery.get(element).width;
     width += wid;
   });
   if (scale.length == 0) return;
-  let height = galery.get(scale[0]).height; //Height of the individual images
-  let gal_width = $('#galery').width();
+  let height = gallery.get(scale[0]).height; //Height of the individual images
+  let gal_width = $('#gallery').width();
   let ratio = height / width; // ratio of all the images together to the height
   let gal_ratio = height / gal_width; // ratio of the gallery
   let new_height = Math.floor(gal_width * ratio); // the updated height
@@ -77,7 +77,7 @@ function updateScale(scale) {
 
   let total = 0;
   scale.forEach(element => {
-    let old_width = galery.get(element).width; // the width of each individual element
+    let old_width = gallery.get(element).width; // the width of each individual element
     let ind_ratio = old_width / height; // the ratio each element has
 
     let new_width = Math.floor(ind_ratio * new_height);
@@ -196,23 +196,23 @@ let gallery_single_arrow_cooldown = 0;
 /*********
 Art Portfolio Image:
 *********/
-function addGaleryClick() {
-  let container = $('#galery-single-container');
-  $('.galery-card').click(function() {
+function addgalleryClick() {
+  let container = $('#gallery-single-container');
+  $('.gallery-card').click(function() {
     container.css('display','inline');
     let el = $(this).children('img');
     let src = el.attr('src').replace('/preview', '').replace('_preview', '');
-    openGalerySingle($(this).hasClass('galery-card-video'), src);
+    opengallerySingle($(this).hasClass('gallery-card-video'), src);
     lockScroll();
     $('.cover-background').height(container.get(0).scrollHeight);
     container.focus();
   })
 
-  $('#galery-single-close').click(function() {
+  $('#gallery-single-close').click(function() {
     closeContainer();
   })
 
-  $('#galery-single-artist-name').click(function() {
+  $('#gallery-single-artist-name').click(function() {
     closeContainer();
   })
 
@@ -221,9 +221,9 @@ function addGaleryClick() {
       closeContainer()
     }
     if (evt.which === 39) { // ->
-      switchGalerySingle(true);
+      switchgallerySingle(true);
     } else if (evt.which === 37) { // <-
-      switchGalerySingle(false);
+      switchgallerySingle(false);
     }
   })
   //Swipeing:
@@ -247,33 +247,33 @@ function addGaleryClick() {
   container.on('touchend', evt => {
     if (moveY < 100 && moveY > -100) {
       if (moveX < -100) { // <-
-        switchGalerySingle(true);
+        switchgallerySingle(true);
       } else if (moveX > 100) { // ->
-        switchGalerySingle(false);
+        switchgallerySingle(false);
       }
     }
   });
 }
 
-function switchGalerySingle(right) {
+function switchgallerySingle(right) {
   if (isGallerySingleOpen()) {
-    let src = $('.galery-single').attr('src');
-    let el_count = $('#galery').children().length - 1;
+    let src = $('.gallery-single').attr('src');
+    let el_count = $('#gallery').children().length - 1;
     let id = parseInt(src.match('(?<=portfolio_).+?(?=[\_.])')[0]);
     let id_next;
     if (gallery_single_arrow_cooldown < Date.now()) {
        if (right) { // ->
         id_next = id + 1;
         if (id_next > el_count) id_next = 1;
-        $(`#galery-card-${id_next}`).hasClass('galery-card-video')
+        $(`#gallery-card-${id_next}`).hasClass('gallery-card-video')
         removeGalleryInfo();
-        openGalerySingle($(`#galery-card-${id_next}`).hasClass('galery-card-video'), 
+        opengallerySingle($(`#gallery-card-${id_next}`).hasClass('gallery-card-video'), 
         src.replace(id, id_next))
       } else if (!right) { // <-
         id_next = id - 1;
         if (id_next < 1) id_next = el_count;
         removeGalleryInfo();
-        openGalerySingle($(`#galery-card-${id_next}`).hasClass('galery-card-video'),
+        opengallerySingle($(`#gallery-card-${id_next}`).hasClass('gallery-card-video'),
         src.replace(id, id_next))
       }
       gallery_single_arrow_cooldown = Date.now() + 300; //0.3 second cooldown for the arrows.
@@ -281,32 +281,36 @@ function switchGalerySingle(right) {
   }
 }
 
-function openGalerySingle(isVideo, src) {
-  let container = $('#galery-single-container');
+function opengallerySingle(isVideo, src) {
+  let container = $('#gallery-single-container');
   if (isVideo) {
     container.append(`<video src="${src.replace('png', 'webm')}" 
-    class="galery-single galery-single-video" loop autoplay></video>`)[0];
-    $('.galery-single-video').get(0).load();
-    $('.galery-single-video').ready(function () {
-      document.querySelector('.galery-single-video').play();
+    class="gallery-single gallery-single-video" loop autoplay></video>`)[0];
+    $('.gallery-single-video').get(0).load();
+    $('.gallery-single-video').ready(function () {
+      document.querySelector('.gallery-single-video').play();
     })
   } else {
-    container.append(`<img src="${src.replace('webm', 'png')}" class="galery-single galery-single-img"></img>`); 
+    container.append(`<img src="${src.replace('webm', 'png')}" class="gallery-single gallery-single-img"></img>`); 
   }
   // Add the additional information
   let id = src.match('(?<=portfolio_).+?(?=[\_.])')[0];
   // console.log(id)
-  container.append(`<h3 class=galery-single-title>
-    ${$(`#galery-card-${id} .galery-card-title`).get(0).innerHTML}</h3>`);
+  container.append(`<h3 class=gallery-single-title>
+    ${$(`#gallery-card-${id} .gallery-card-title`).get(0).innerHTML}</h3>`);
+  container.append('<div class="lds-dual-ring"></div>');
+  $('.gallery-single-video').ready(function () {
+    $('.lds-dual-ring').remove();
+  });
 }
 
 function isGallerySingleOpen() {
-  return $('#galery-single-container:visible').length > 0;
+  return $('#gallery-single-container:visible').length > 0;
 }
 
 function closeContainer() {
   unlockScroll();
-  $('#galery-single-container').css('display','none');
+  $('#gallery-single-container').css('display','none');
   $('.it-article').css('display','none');
   removeGalleryInfo();
   $('.cover-background').each(function() {
@@ -315,8 +319,8 @@ function closeContainer() {
 }
 
 function removeGalleryInfo() {
-  $('.galery-single').remove();
-  $('.galery-single-title').remove();
+  $('.gallery-single').remove();
+  $('.gallery-single-title').remove();
 }
 
 function openItExperienceSingle(event) {
@@ -383,8 +387,8 @@ function scrollFunction() {
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   if (isGallerySingleOpen()) {
-    document.querySelector('#galery-single-container').scrollTop = 0;
-    $('#galery-single-container').focus();
+    document.querySelector('#gallery-single-container').scrollTop = 0;
+    $('#gallery-single-container').focus();
   } else if (isItSingleOpen()) {
     $('.it-article').each(function() {
       if ($(this).css('display') === 'inline') {

@@ -1,21 +1,9 @@
 @media screen and (max-width: 500px) {
     #about-layout {
-        grid-template: "name profile profile" "blurb blurb blurb";
-        grid-template-columns: 30px calc(340px / var(--hex-size)) 1fr;
-    }
-    #about-profile {
-        padding-left: 0px;
-        margin-left: 0px;
-    }
-    #about-text {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    #about-name {
-        height: 9rem;
+        width: 95%;
     }
 
-    .galery-card {
+    .gallery-card {
         width: 100%;
     }
 
