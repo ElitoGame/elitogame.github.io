@@ -89,7 +89,8 @@ Galery:
 }
 
 #galery-single-container {
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
     position: fixed;
     top: 0px;
     left: 0px;

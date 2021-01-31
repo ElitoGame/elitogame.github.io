@@ -5,11 +5,6 @@
 
 <head>
     <title>ElitoGame's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Megrim&display=swap"
-        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1275efd285.js" crossorigin="anonymous"></script>
     <style>
@@ -126,7 +121,7 @@
                 <div class="galery-card" id="galery-card-10">
                     <img src="rsc/Art/preview/portfolio_10_preview.png" alt="People floating during a Eclipse [Blender]">
                     <span class="galery-card-program">[Blender]</span>
-                    <span class="galery-card-title">People floating during a Eclipse</span>
+                    <span class="galery-card-title">The Rise of Sky</span>
                 </div>
                 <div class="galery-card" id="galery-card-11">
                     <img src="rsc/Art/preview/portfolio_11_preview.png"
@@ -175,19 +170,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="it-preview-img">
-                            <ul id="it-languages">
-                                <u>Known Languages:</u><br>
-                                <li>Java</li>
-                                <li>JavaScript</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JQuery</li>
-                                <li>Angular</li>
-                                <li>php</li>
-                                <li>Visual Scripting in Unreal Engine</li>
-                                <li>GDscript</li>
-                                <li>Basic Python</li>
+                        <div class="it-preview-img" id="it-languages">
+                            <!-- <h4 id="it-languages-title">Known Languages:</h4> -->
+                            <ul  class="fa-ul">
+                                <li><span class="fa-li"><i class="fab fa-java"></i></span>Java</li>
+                                <li><span class="fa-li"><i class="fab fa-js-square"></i></span>JavaScript</li>
+                                <li><span class="fa-li"><i class="fab fa-html5"></i></span>HTML</li>
+                                <li><span class="fa-li"><i class="fab fa-css3-alt"></i></span>CSS</li>
+                                <!-- <li>JQuery</li> -->
+                                <li><span class="fa-li"><i class="fab fa-angular"></i></span>Angular</li>
+                                <li><span class="fa-li"><i class="fab fa-php"></i></span>php</li>
+                                <li><span class="fa-li"><i class="fab fa-python"></i></span>Python</li>
                             </ul>
                         </div>
                     </div>
@@ -196,11 +189,25 @@
                     <div class="it-preview even">
                         <img src="rsc/SlideShow/DnDBot/preview.png" alt="DnDBot Preview" class="it-preview-img">
                         <div class="it-preview-info">
+                            <div class="it-preview-langs">
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-js-square"></i>
+                                    <p class="it-preview-lang-singl-txt">JavaScript</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-node-js"></i>
+                                    <p class="it-preview-lang-singl-txt">Node.JS</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
+                                    <i class="fas fa-database"></i>
+                                    <p class="it-preview-lang-singl-txt">SQLite</p>
+                                </div>
+                            </div>
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">DnDBot</h3>
                                 <div class="it-preview-text">
                                     A ChatBot using the Discord API and a Database to support me and my friends playing DnD.<br>
-                                    <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
+                                    <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button><br>
                                 </div>
                             </div>
                         </div>
@@ -208,13 +215,11 @@
                     <div class="it-article" tabindex="0">
                         <button class="it-article-close" onclick="closeContainer()">⨉</button>
                         <div class="it-article-text">
-                            <img src="rsc/SlideShow/DnDBot/img (6).png" style="width:100%"
-                            alt="Character Sheet (left) | Dices (middle) | Help and Reload Command (right)">
                             <h3 class="gradient-header2 it-preview-title">DnDBot</h3>
                             <div class="quick-profile">
                                 <h4>Quick Profile:</h4>
                                 <p><strong>Type:</strong> Discord Bot</p>
-                                <p><strong>Language(s):</strong> JavaScript, Bash, SQL</p>
+                                <p><strong>Language(s):</strong> JavaScript, Bash, SQLite Node.JS</p>
                                 <p><strong>APIs/ORMs:</strong> Discord API, Sequilize ORM, Giphy SDK</p>
                             </div>
                             <p>
@@ -231,8 +236,31 @@
                                 it with the ORM Sequilize. For a joke, I also implemented the Giphy SDK which allowed
                                 me to display a random "shuffle" GIF upon the command "?shuffle".
                             </p>
-                            <img src="rsc/SlideShow/DnDBot/img (7).png" style="width:100%"
-                            alt="Command Documentation (left) | All Players stats (right)">
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+                                <span class="slideshow-loader"></span>
+                        
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/DnDBot/img (6).png" style="width:100%"
+                                        alt="Character Sheet (left) | Dices (middle) | Help and Reload Command (right)">
+                                    <div class="text">Character Sheet (left) | Dices (middle) | Help and Reload Command (right)
+                                    </div>
+                                </div>
+                        
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/DnDBot/img (7).png" style="width:100%"
+                                        alt="Command Documentation (left) | All Players stats (right)">
+                                    <div class="text">Command Documentation (left) | All Players stats (right)</div>
+                                </div>
+                        
+                        
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                            </div>
+                            <br>
+                            <div style="text-align:center" class="dotainer"></div>
                         </div>
                         <div class="cover-background cover-background-it"></div>
                     </div>
@@ -240,6 +268,16 @@
                 <article>
                     <div class="it-preview uneven">
                         <div class="it-preview-info">
+                            <div class="it-preview-langs">
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-java"></i>
+                                    <p class="it-preview-lang-singl-txt">Java</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
+                                    <i class="fas fa-database"></i>
+                                    <p class="it-preview-lang-singl-txt">SQLite</p>
+                                </div>
+                            </div>
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">Kineticraft</h3>
                                 <div class="it-preview-text">
@@ -256,7 +294,26 @@
                         <button class="it-article-close" onclick="closeContainer()">⨉</button>
                         <div class="it-article-text">
                             <h3 class="gradient-header2 it-preview-title">Kineticraft</h3>
-                            <img src="rsc/SlideShow/Kineticraft/img (5).png" style="width:100%">
+                            <div class="slideshow-container">
+                                <span class="slideshow-loader"></span>
+                        
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Kineticraft/img (5).png" style="width:100%">
+                                    <div class="text">Cosmetic particles above players (left) | Shop Profit Report (right)</div>
+                                </div>
+                        
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Kineticraft/img (6).png" style="width:100%">
+                                    <div class="text">Dynamic NPC (left) | Commands with AutoComplete (right)</div>
+                                </div>
+                        
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                            </div>
+                            <br>
+                            <div style="text-align:center" class="dotainer"></div>
                             <div class="quick-profile">
                                 <h4>Quick Profile:</h4>
                                 <p><strong>Type:</strong> Java Minecraft Plugin</p>
@@ -271,7 +328,6 @@
                                 Currently there are 14 commands, 19 custom mechanics and some additional features
                                 like NPCs with custom GUIs and customizable Items.
                             </p>
-                            <img src="rsc/SlideShow/Kineticraft/img (6).png" style="width:100%">
                             <p>
                                 A bunch of those mechanics are adjustable using a <i>config.yml</i> and the NPC,
                                 GUI and Item feature even get their own configuration file which allow me to modify
@@ -290,6 +346,12 @@
                     <div class="it-preview even">  
                         <img src="rsc/SlideShow/Other/preview.png" alt="GoDot & Electron Preview" class="it-preview-img">
                         <div class="it-preview-info">
+                            <div class="it-preview-langs">
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-js-square"></i>
+                                    <p class="it-preview-lang-singl-txt">JavaScript</p>
+                                </div>
+                            </div>
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">GoDot & Electron</h3>
                                 <div class="it-preview-text">
@@ -305,12 +367,47 @@
                         <button class="it-article-close" onclick="closeContainer()">⨉</button>
                         <div class="it-article-text">
                             <h3 class="gradient-header2 it-preview-title">GoDot & Electron</h3>
-                            <img src="rsc/SlideShow/Other/img (1).png" style="width:100%">
-                            <img src="rsc/SlideShow/Other/img (2).png" style="width:100%">
-                            <img src="rsc/SlideShow/Other/img (3).png" style="width:100%">
-                            <img src="rsc/SlideShow/Other/img (4).png" style="width:100%">
-                            <img src="rsc/SlideShow/Other/img (5).png" style="width:100%">
-                            <img src="rsc/SlideShow/Other/img (6).png" style="width:100%">
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+                                <span class="slideshow-loader"></span>
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Other/img (1).png" style="width:100%">
+                                    <div class="text">Node System Writing (GoDot)</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Other/img (2).png" style="width:100%">
+                                    <div class="text">Selction in Node System (GoDot)</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Other/img (3).png" style="width:100%">
+                                    <div class="text">Node System (Electron)</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Other/img (4).png" style="width:100%">
+                                    <div class="text">Marauders Game (Browser)</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Other/img (5).png" style="width:100%">
+                                    <div class="text">Marauders Game (GoDot)</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/Other/img (6).png" style="width:100%">
+                                    <div class="text">2D Platformer (GoDot)</div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                            </div>
+                            <br>
+                            <div style="text-align:center" class="dotainer"></div>
                             <div class="quick-profile">
                                 <h4>Quick Profile:</h4>
                                 <p><strong>Type:</strong> GoDot Project | Electron App | Browser Game</p>
@@ -356,6 +453,20 @@
                 <article>
                     <div class="it-preview uneven">
                         <div class="it-preview-info">
+                            <div class="it-preview-langs">
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-js-square"></i>
+                                    <p class="it-preview-lang-singl-txt">JavaScript</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-html5"></i>
+                                    <p class="it-preview-lang-singl-txt">HTML</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <p class="it-preview-lang-singl-txt">CSS</p>
+                                </div>
+                            </div>
                             <div class="it-preview-info-c">
                                 <h3 class="gradient-header2 it-preview-title">Web Development</h3>
                                 <div class="it-preview-text">
@@ -385,7 +496,7 @@
                             <p>
                                 This Website is not my first attempt at a Website, though it's the first one reaching 
                                 this state of completion. Hosted via GitHub pages, the process of this Website's Development is 
-                                documented on my <a href="https://github.com/ElitoGame/elitogame.github.io">GitHub</a>.
+                                documented on my <a href="https://github.com/ElitoGame/elitogame.github.io" target="_blank">GitHub</a>.
                             </p>
                         </div>
                         <div class="cover-background cover-background-it"></div>
@@ -399,11 +510,17 @@
 
     <!-- Credits (Footer) -->
     <footer>
+        <div class="socialmedia">
+            <a href="https://github.com/ElitoGame" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <br>
+        <p>Copyright © ElitoGame <span class="ph_year"></span></p>
         <p>This Website has been developed by ElitoGame and is hosted via GitHub Pages.</p>
+        <br>
         <p>Thanks to Anja for the awesome Profile Picture!</p>
         <p>Thanks to Thomas for creating the DnD Bot Logo!</p>
         <p>Thanks to Alex Agod for letting me use the Kineticraft Server Logo!</p>
-        <p>The GoDot Logo has been made by <a href="https://icon-icons.com/icon/godot/103035">Zayronxio</a>.</p>
+        <p>The GoDot Logo has been made by <a href="https://icon-icons.com/icon/godot/103035" target="_blank">Zayronxio</a>.</p>
     </footer>
 </body>
 

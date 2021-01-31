@@ -168,6 +168,8 @@ New System below:
 
 .it-preview-info {
     width: 50%;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .it-preview-img{
@@ -184,7 +186,7 @@ New System below:
 }
 
 .it-preview-title {
-    margin: 0px 0px 0.5rem 0px;
+    margin: 0px 1rem 0.5rem 0px;
 }
 
 .it-preview-more {
@@ -196,9 +198,13 @@ New System below:
     font-size: 1rem;
 }
 
+.it-preview-text {
+    padding-bottom: 1rem;
+}
+
 
 .it-article {
-    visibility: hidden;
+    /* visibility: hidden; */
     position: fixed;
     top: 0px;
     left: 0px;
@@ -209,6 +215,7 @@ New System below:
     z-index: 200;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    display: none;
 }
 
 .it-article * {
@@ -240,8 +247,89 @@ New System below:
 
 .it-intro {
     font-size: 1.1rem;
+    padding: 1rem 0px;
 }
 
 .it-intro h3 {
     font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.li-red {
+    color: #f35127;
+}
+
+.li-yellow {
+    color: #ffdf38;
+}
+
+.li-blue {
+    color: #3991f2;
+}
+
+.fa-li {
+    color: var(--link-color);
+}
+
+.fa-ul {
+    margin-top: 2.7rem;
+    /* position: relative;
+    top: 50%;
+    transform: translateY(-50%); */
+}
+
+.it-preview-info .it-preview-langs {
+    display: flex;
+    position: absolute;
+    padding-top: 1rem;
+}
+
+.even .it-preview-langs {
+    flex-direction: row-reverse;
+    right: 0.2rem;
+}
+
+.uneven .it-preview-langs {
+    flex-direction: row;
+    left: 1.2rem;
+}
+
+.it-preview-langs * {
+    font-size: 1.2rem;
+}
+
+.it-preview-lang-singl {
+    display: flex;
+    width: max-content;
+    padding-right: 1rem;
+}
+
+.it-preview-lang-singl:hover .it-preview-lang-singl-txt {
+    width: 5.2rem;
+}
+
+.it-preview-lang-singl:hover {
+    color: aquamarine;
+}
+
+.it-preview-lang-singl-txt {
+    margin: 0px;
+    width: 0px;
+    height: max-content;
+    overflow: hidden;
+    padding-left: 0.3rem;
+    font-size: 1.1rem;
+    /* position: relative;
+    top: 50%;
+    transform: translateY(-50%); */
+    transition: 1s;
+}
+
+.it-preview-header {
+    display: flex;
+    
+}
+
+#it-languages-title {
+    margin: 0.8rem 0px 0.2rem 0px;
 }

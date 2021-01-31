@@ -9,8 +9,8 @@ Base styling & variables:
     --link-color: rgb(178, 213, 214);
     --link-hovercolor: rgb(146, 204, 204);
     --background-color: rgb(18, 24, 26);
-    --footer-color: rgb(51, 48, 48);
-    --footer-text-color: #c7c7c7;
+    --footer-color: rgb(17, 17, 17);
+    --footer-text-color: #747474;
     --nav-text: 1.2rem;
 }
 
@@ -77,6 +77,14 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+.socialmedia {
+    font-size: 2rem;
+}
+
+.socialmedia * {
+    padding: 0px 0.5rem;
 }
 
 /*********

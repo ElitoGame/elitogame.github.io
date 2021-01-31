@@ -32,4 +32,15 @@ CSS code for less than or equal to 680px width:
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .fa-ul {
+        margin-top: 0.1rem;
+    }
+
+    .it-preview-info .it-preview-langs {
+        flex-direction: row-reverse;
+        left: auto;
+        right: 0.2rem;
+        padding-top: 0px;
+    }
 }
