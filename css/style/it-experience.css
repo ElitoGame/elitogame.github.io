@@ -5,6 +5,7 @@ Slideshow:
 /* Slideshow container */
 
 .slideshow-container {
+    width: 80%;
     max-width: 1000px;
     position: relative;
     margin: auto;
@@ -124,6 +125,8 @@ IT-Experience:
     padding-left: 1rem;
     padding-top: 1px;
     padding-bottom: 1px;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 .quick-profile>* {
@@ -243,6 +246,11 @@ New System below:
     width: 70%;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 1rem;
+}
+
+.it-article-text h3 {
+    font-size: 2rem;
 }
 
 .it-intro {
