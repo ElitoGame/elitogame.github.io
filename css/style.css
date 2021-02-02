@@ -301,3 +301,17 @@ ToTop button
     color: cyan;
 }
 
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    position: relative;
+    top: 5px;
+}
+.icon-SoloLearn {
+    width: 2.1rem;
+    height: 2.1rem;
+}
