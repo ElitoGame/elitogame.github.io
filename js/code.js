@@ -176,6 +176,9 @@ function addGalleryClick() {
 function switchgallerySingle(right) {
   if (isGallerySingleOpen()) {
     let src = $('.gallery-single').attr('src');
+    if (src === undefined) {
+      src = $($('.gallery-single source')[1]).attr('src');
+    }
     let el_count = $('#gallery').children().length - 1;
     let id = parseInt(src.match('(?<=portfolio_).+?(?=[\_.])')[0]);
     let id_next;
@@ -355,6 +358,24 @@ function addSettingsClick() {
       localStorage.setItem('theme', 'dark');
     }
   });
+  $('#animations').click(function() {
+    let icon = $(this).find('.fas');
+    if (icon.hasClass('fa-play')) {
+      icon.removeClass('fa-play');
+      icon.addClass('fa-pause');
+      localStorage.setItem('animations', 'false');
+      $('video').each(function() {
+        this.pause();
+      });
+    } else if (icon.hasClass('fa-pause')) {
+      icon.removeClass('fa-pause');
+      icon.addClass('fa-play');
+      localStorage.setItem('animations', 'true');
+      $('video').each(function() {
+        this.play();
+      });
+    }
+  });
   $(document).mousedown(function(evt) {
     let gear = $('.settings');
     let settings = $('.settings-dropdown');
@@ -377,4 +398,14 @@ function loadTheme() {
   } else {
     body.addClass('dark');
   }
+  //Animation Setting too in here
+  if (localStorage.getItem('animations') === 'false') {
+    icon = $('#animations .fas');
+    icon.removeClass('fa-play');
+    icon.addClass('fa-pause');
+    $('video').each(function() {
+      this.pause();
+    });
+  }
+  
 }

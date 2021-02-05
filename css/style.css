@@ -14,6 +14,8 @@ Base styling & variables:
     /* ToTop: */
     --totop-color: rgb(82, 82, 82);
     --totop-hover-color: cyan;
+    /* Prev-Next */
+    --prev-next-hover-color: rgba(0, 0, 0, 0.8);
 
     /* Headers: */
     --header-color: rgb(231, 231, 231);
@@ -70,6 +72,8 @@ body.light {
     /* ToTop: */
     --totop-color: rgb(116, 116, 116);
     --totop-hover-color: cyan;
+    /* Prev-Next */
+    --prev-next-hover-color: rgba(158, 158, 158, 0.8);
 
     /* Headers: */
     --header-color: rgb(63, 63, 63);
@@ -271,6 +275,9 @@ nav .hamburger {
     background: var(--dropdown-background-fallback-color);
     background: var(--dropdown-background-color);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
 }
 
 .settings.setting-open {

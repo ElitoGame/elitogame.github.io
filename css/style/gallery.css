@@ -154,6 +154,11 @@ gallery:
     font-weight: normal;
 }
 
+#gallery-single-image-container a {
+   z-index: 300;
+
+}
+
 #cover-background-gallery {
     z-index: 101;
 }
