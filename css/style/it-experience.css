@@ -119,7 +119,7 @@ IT-Experience:
 *********/
 
 .quick-profile {
-    background-color: rgb(44, 44, 44);
+    background-color: var(--it-article-quick);
     border-radius: 5px;
     max-width: 20rem;
     padding-left: 1rem;
@@ -162,11 +162,11 @@ New System below:
 }
 
 .it-preview.uneven {
-    background-color: #242424;
+    background-color: var(--it-article-uneven);
 }
 
 .it-preview.even {
-    background-color: #202020;
+    background-color: var(--it-article-even);
 }
 
 .it-preview-info {
@@ -195,7 +195,7 @@ New System below:
 .it-preview-more {
     border: none;
     background-color: inherit;
-    color: rgb(178, 213, 214);
+    color: var(--link-color);
     padding: 0px;
     font-family: inherit;
     font-size: 1rem;
@@ -237,7 +237,7 @@ New System below:
     right: 1rem;
     width: 5%;
     height: 2rem;
-    color: whitesmoke;
+    color: var(--gallery-icon);
     font-size: 1.5rem;
 }
 
@@ -254,25 +254,12 @@ New System below:
 }
 
 .it-intro {
-    font-size: 1.1rem;
     padding: 1rem 0px;
 }
 
 .it-intro h3 {
     font-size: 1.2rem;
     margin-top: 0.5rem;
-}
-
-.li-red {
-    color: #f35127;
-}
-
-.li-yellow {
-    color: #ffdf38;
-}
-
-.li-blue {
-    color: #3991f2;
 }
 
 .fa-li {
@@ -295,11 +282,17 @@ New System below:
 .even .it-preview-langs {
     flex-direction: row-reverse;
     right: 0.2rem;
+    cursor: pointer;
 }
 
 .uneven .it-preview-langs {
     flex-direction: row;
     left: 1.2rem;
+    cursor: pointer;
+}
+
+#it-languages {
+    font-size: 1.1rem;
 }
 
 .it-preview-langs * {
@@ -310,6 +303,7 @@ New System below:
     display: flex;
     width: max-content;
     padding-right: 1rem;
+    transition: color 1s;
 }
 
 .it-preview-lang-singl:hover .it-preview-lang-singl-txt {
@@ -317,7 +311,7 @@ New System below:
 }
 
 .it-preview-lang-singl:hover {
-    color: aquamarine;
+    color: var(--it-lang-hover-color);
 }
 
 .it-preview-lang-singl-txt {

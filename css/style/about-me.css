@@ -20,7 +20,7 @@ About-Me:
 #about-text {
     margin-left: 5rem;
     margin-right: 5rem;
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.2rem;
 }
 
@@ -35,7 +35,12 @@ Hex-image:
     background-size: cover;
     background-position: center center;
     position: relative;
+    --hex-color: var(--background-color);
     /*transform: rotate(10deg);  need to rotation ? */
+}
+
+.hex-image.hex-image-cover {
+    --hex-color: rgba(var(--background-cover-color), 1);
 }
 
 /* Left shape */
@@ -48,8 +53,8 @@ Hex-image:
     width: 0;
     height: 3px;
     border-right: calc(85px / var(--hex-size)) solid transparent;
-    border-bottom: calc(150px / var(--hex-size)) solid var(--background-color);
-    border-top: calc(150px / var(--hex-size)) solid var(--background-color);
+    border-bottom: calc(150px / var(--hex-size)) solid var(--hex-color);
+    border-top: calc(150px / var(--hex-size)) solid var(--hex-color);
 }
 
 /* Right shape */
@@ -62,6 +67,6 @@ Hex-image:
     width: 0;
     height: 3px;
     border-left: calc(85px / var(--hex-size)) solid transparent;
-    border-bottom: calc(150px / var(--hex-size)) solid var(--background-color);
-    border-top: calc(150px / var(--hex-size)) solid var(--background-color);
+    border-bottom: calc(150px / var(--hex-size)) solid var(--hex-color);
+    border-top: calc(150px / var(--hex-size)) solid var(--hex-color);
 }

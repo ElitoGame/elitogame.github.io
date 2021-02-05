@@ -3,6 +3,7 @@ Global required variables:
 *********/
 var gallery = new Map();
 var slideIndex = 1;
+var menuOpen = false;
 
 /*********
 On ready-event IMPORTANT!
@@ -12,7 +13,9 @@ $(document).ready(function () {
   initHamburger();
   modifyPlaceholders();
   setupSlides();
-  addgalleryClick();
+  addGalleryClick();
+  addSettingsClick();
+  loadTheme();
 });
 
 window.onresize = function () {
@@ -32,7 +35,6 @@ Handle the below 680px Navbar hamburger:
 *********/
 function initHamburger() {
   const burger = $('nav .hamburger')
-  let menuOpen = false;
   burger.click(function () {
     if (!menuOpen) {
       burger.addClass('open');
@@ -112,7 +114,7 @@ let gallery_single_arrow_cooldown = 0;
 /*********
 Art Portfolio Image:
 *********/
-function addgalleryClick() {
+function addGalleryClick() {
   let container = $('#gallery-single-container');
   $('.gallery-card').click(function() {
     container.css('display','inline');
@@ -200,8 +202,10 @@ function switchgallerySingle(right) {
 function opengallerySingle(isVideo, src) {
   let container = $('#gallery-single-container');
   if (isVideo) {
-    container.append(`<video src="${src.replace('png', 'webm')}" 
-    class="gallery-single gallery-single-video" loop autoplay></video>`)[0];
+    container.append(`<video controls class="gallery-single gallery-single-video" loop autoplay>
+      <source src="${src.replace('png', 'mv4')}" type='video/webm' codecs="H.264 (x264)">
+      <source src="${src.replace('png', 'webm')}" type='video/mp4' codecs="vp9">
+    </video>`)[0];
     $('.gallery-single-video').get(0).load();
     $('.gallery-single-video').ready(function () {
       document.querySelector('.gallery-single-video').play();
@@ -313,3 +317,64 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 } 
+
+/*******
+Settings
+*******/
+
+function addSettingsClick() {
+  let body = $('body');
+  $('.settings').click(function() {
+    if ($(this).hasClass('setting-open')) {
+      $(this).removeClass('setting-open');
+      $(this).addClass('setting-close');
+    } else if ($(this).hasClass('setting-close')) {
+      $(this).removeClass('setting-close');
+      $(this).addClass('setting-open');
+    } else {
+      $(this).addClass('setting-open');
+    }
+    $(this).parent().find('.settings-dropdown').toggleClass('hidden');
+    $(this).parent().find('.settings-dropdown').focus();
+    $('nav .hamburger').removeClass('open');
+    menuOpen = false;
+  });
+  $('#themes').click(function() {
+    let icon = $(this).find('.fas');
+    if (icon.hasClass('fa-moon')) {
+      icon.removeClass('fa-moon');
+      icon.addClass('fa-sun');
+      body.removeClass('dark');
+      body.addClass('light');
+      localStorage.setItem('theme', 'light');
+    } else if (icon.hasClass('fa-sun')) {
+      icon.removeClass('fa-sun');
+      icon.addClass('fa-moon');
+      body.removeClass('light');
+      body.addClass('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+  $(document).mousedown(function(evt) {
+    let gear = $('.settings');
+    let settings = $('.settings-dropdown');
+    if ((!settings.is(evt.target) && settings.has(evt.target).length === 0)
+    && (!gear.is(evt.target) && gear.has(evt.target).length === 0)) {
+      $('.settings').removeClass('setting-open');
+    $('.settings').addClass('setting-close');
+    $('.settings-dropdown').addClass('hidden');
+    }
+  })
+}
+
+function loadTheme() {
+  let body = $('body');
+  let icon = $('#themes .fas');
+  if (localStorage.getItem('theme') === 'light') {
+    body.addClass('light');
+    icon.removeClass('fa-moon');
+    icon.addClass('fa-sun');
+  } else {
+    body.addClass('dark');
+  }
+}
