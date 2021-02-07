@@ -216,11 +216,30 @@ function opengallerySingle(isVideo, src) {
   } else {
     container.append(`<img src="${src.replace('webm', 'png')}" class="gallery-single gallery-single-img"></img>`); 
   }
+
+  //Set the background to default height
+  $('#cover-background-gallery').css('height', '100vh');
+
   // Add the additional information
-  let id = src.match('(?<=portfolio_).+?(?=[\_.])')[0];
-  // console.log(id)
+  let id = src.match('(?<=portfolio_).+?(?=[\_.])')[0]; //get the id
   container.append(`<h3 class=gallery-single-title>
-    ${$(`#gallery-card-${id} .gallery-card-title`).get(0).innerHTML}</h3>`);
+    ${$(`#gallery-card-${id} .gallery-card-title`).get(0).innerHTML}</h3>`); //title
+  container.find('.gallery-single-txt').remove(); //remove previous texts
+  
+  container.find('#gallery-single-txt-pointer').remove(); //remove scroll down button
+  if ($(`#gallery-card-${id} .gallery-single-txt`).length != 0) { //add scroll down button
+    container.append(
+      '<a id="gallery-single-txt-pointer" href="#gallery-single-txt-header"><i class="fas fa-arrow-circle-down"></i></a>')
+    .click(function() {
+      setTimeout(function() {
+        container.focus(); //give the new scroll button a click event to focus the main container again (arrow buttons)
+      }, 100);
+    });
+  }
+  $(`#gallery-card-${id} .gallery-single-txt`).clone().appendTo(container).toggleClass('hidden'); //add text
+  $(`#gallery-single-container .gallery-single-txt .gallery-single-txt-header`)
+    .removeClass('gallery-single-txt-header').attr('id', 'gallery-single-txt-header'); //remove class & add id (anchor)
+  $('#cover-background-gallery').css('height', container.get(0).scrollHeight); //set the scroll to needed value
 }
 
 function isGallerySingleOpen() {
@@ -292,7 +311,9 @@ function unlockScroll() {
 }
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+document.addEventListener('scroll', function (event) {
+  scrollFunction();
+}, true /*Capture event*/);
 
 function scrollFunction() {
   let totop = document.getElementById("totop");
@@ -300,6 +321,21 @@ function scrollFunction() {
     totop.style.display = "block";
   } else {
     totop.style.display = "none";
+  }
+  if (isGallerySingleOpen()) {
+    let container = $('#gallery-single-container');
+    if (container.scrollTop() > 20) {
+      totop.style.display = "block";
+    } else {
+      totop.style.display = "none";
+    }
+  } else if (isItSingleOpen()) {
+    let container = $('.it-article:visible');
+    if (container.scrollTop() > 20) {
+      totop.style.display = "block";
+    } else {
+      totop.style.display = "none";
+    }
   }
 }
 
@@ -309,12 +345,8 @@ function topFunction() {
     document.querySelector('#gallery-single-container').scrollTop = 0;
     $('#gallery-single-container').focus();
   } else if (isItSingleOpen()) {
-    $('.it-article').each(function() {
-      if ($(this).css('display') === 'inline') {
-        $(this).scrollTop(0);
-        $(this).focus();
-      }
-    });
+    $('.it-article:visible').get(0).scrollTop = 0;
+    $('.it-article:visible').focus();
   } else {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -367,6 +399,7 @@ function addSettingsClick() {
       $('video').each(function() {
         this.pause();
       });
+      body.toggleClass('pauseanim');
     } else if (icon.hasClass('fa-pause')) {
       icon.removeClass('fa-pause');
       icon.addClass('fa-play');
@@ -374,6 +407,7 @@ function addSettingsClick() {
       $('video').each(function() {
         this.play();
       });
+      body.toggleClass('pauseanim');
     }
   });
   $(document).mousedown(function(evt) {
@@ -406,6 +440,7 @@ function loadTheme() {
     $('video').each(function() {
       this.pause();
     });
+    body.toggleClass('pauseanim');
   }
   
 }

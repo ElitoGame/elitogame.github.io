@@ -62,7 +62,7 @@ body {
 
 body.light {
     /* Background Color: */
-    --background-color: rgb(211, 216, 219);
+    --background-color: rgb(230, 234, 236);
     /* Basic Text: */
     --basic-text-color: rgb(46, 46, 46);
     /* Links & Lines: */
@@ -86,11 +86,11 @@ body.light {
     --dropdown-background-fallback-color: rgb(12, 14, 14);
     --dropdown-background-color: linear-gradient(36deg, #c5c5c5 0%, rgb(168, 193, 214) 48%, #c5c5c5 100%);
     /* Gallery/IT: */
-    --background-cover-color: 150, 150, 150;
+    --background-cover-color: 230, 234, 236;
     --xyz: rgb(150, 150, 150);
 
-    --gallery-icon: whitesmoke;
-    --gallery-overlay-gradient: linear-gradient(180deg, rgba(44, 44, 44, 0) 0%, rgba(83, 83, 83, 0.082) 75%, rgb(143, 143, 143) 100%);
+    --gallery-icon: rgb(31, 31, 31);
+    --gallery-overlay-gradient: linear-gradient(180deg, rgba(112, 112, 112, 0) 0%, rgba(99, 99, 99, 0.044) 65%, rgba(207, 207, 207, 0.3) 75%, rgb(209, 209, 209) 100%);
 
     --it-lang-hover-color: rgb(67, 167, 133);
     --it-article-uneven: #c0c0c0;
@@ -99,6 +99,11 @@ body.light {
     /* Footer: */
     --footer-color: rgb(163, 163, 163);
     --footer-text-color: #2b2b2b;
+}
+
+body.pauseanim * {
+    animation: none !important;
+    transition: none !important;
 }
 
 a {
@@ -116,6 +121,10 @@ button:hover {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
 /*********
 Important Layout Stuff without nav: 
 *********/
@@ -126,7 +135,7 @@ Important Layout Stuff without nav:
     grid-template-columns: 15rem 1fr 1fr;
     height: 100vh;
     width: 100%;
-    margin-top: 1rem;
+    padding-top: 1rem;
     overflow: hidden;
 }
 
