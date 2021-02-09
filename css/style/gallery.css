@@ -2,15 +2,22 @@
 gallery: 
 *********/
 
+#art-portfolio {
+    min-height: 100vh;
+    height: max-content;
+}
+
 #gallery {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    margin: auto;
     margin-top: 1.5rem;
+    width: 70%;
 }
 
 .gallery-card {
-    width: 16.666667%;
+    width: 20%;
     position: relative;
     cursor: pointer;
 }
@@ -101,10 +108,10 @@ gallery:
 #gallery-single-container {
     display: none;
     /* visibility: hidden; */
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 200;
     overflow-y: scroll; /*auto*/

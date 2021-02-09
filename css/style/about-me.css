@@ -2,13 +2,20 @@
 About-Me: 
 *********/
 
+#about-me {
+    margin-top: 7vh;
+}
+
 #about-layout {
-    --hex-size: 1.5;
+    --hex-size: 0.5;
     width: 70%;
-    margin: 3rem 0px;
+    margin: 10rem 0px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    min-height: 73vh;
+    height: max-content;
+    /* max-height: 100vh; */
 }
 
 #about-profile {
@@ -18,8 +25,6 @@ About-Me:
 }
 
 #about-text {
-    margin-left: 5rem;
-    margin-right: 5rem;
     /* text-align: center; */
     font-size: 1.2rem;
 }

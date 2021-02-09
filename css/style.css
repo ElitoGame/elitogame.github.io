@@ -20,8 +20,8 @@ Base styling & variables:
     /* Headers: */
     --header-color: rgb(231, 231, 231);
     --header-grad-1: #00ff73;
-    --header-grad-2: #2edfe5;
-    --header-grad-3: #c2ffdd;
+    --header-grad-2: #2ee59f;
+    --header-grad-3: #90f8d9;
     --header-grad-4: #aaf9fc;
     /* Nav: */
     --nav-text: 1.2rem;
@@ -56,7 +56,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow-x: hidden;
-    line-height: 1.3;
+    line-height: 1.5;
     transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
@@ -137,6 +137,7 @@ Important Layout Stuff without nav:
     width: 100%;
     padding-top: 1rem;
     overflow: hidden;
+    line-height: 1;
 }
 
 header {
@@ -189,7 +190,7 @@ h1 {
 
 h2 {
     margin-bottom: 0.5rem;
-    font-family: 'Gugi', cursive;
+    /* font-family: 'Gugi', cursive; */
     font-size: 2rem;
     width: fit-content;
 }
@@ -199,10 +200,12 @@ h2 {
     margin: 0px;
     letter-spacing: 7px;
     width: min-content;
+    color: var(--header-grad-1);
 }
 
 #irl-name {
     margin-left: 1rem;
+    color: var(--header-grad-1);
 }
 
 .svg {
@@ -233,7 +236,7 @@ nav {
     font-size: var(--nav-text);
     padding-top: 0.6rem;
     margin-right: 2rem;
-    font-family: 'Gugi', cursive;
+    /* font-family: 'Gugi', cursive; */
     width: 100%;
     height: max-content;
     display: flex;
@@ -248,15 +251,15 @@ nav .dropitem {
 
 nav .dropitem a {
     text-decoration: none;
-    color: var(--link-color);
-    height: 1.2rem;
+    color: var(--header-grad-1);
+    height: max-content;
     /* width: 30rem; */
     width: min-content;
     white-space: nowrap;
 }
 
 nav .dropitem a:hover {
-    color: var(--link-hovercolor);
+    color: var(--header-grad-2);
 }
 
 nav .hamburger {
@@ -347,38 +350,42 @@ Gradient-texts:
 *********/
 
 .gradient-header {
-    background: linear-gradient(90deg, var(--header-grad-1), var(--header-grad-2));
+    /* background: linear-gradient(90deg, var(--header-grad-1), var(--header-grad-2));
     text-shadow: none;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: var(--header-grad-1);
     max-width: max-content;
 }
 
 .gradient-header-vert {
-    background: linear-gradient(180deg, var(--header-grad-1), var(--header-grad-2));
+    /* background: linear-gradient(180deg, var(--header-grad-1), var(--header-grad-2));
     text-shadow: none;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: var(--header-grad-1);
     max-width: max-content;
 }
 
 .gradient-header2 {
-    background: linear-gradient(90deg, var(--header-grad-3), var(--header-grad-4));
+    /* background: linear-gradient(90deg, var(--header-grad-3), var(--header-grad-4));
     text-shadow: none;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: var(--header-grad-3);
     max-width: max-content;
 }
 
 .gradient-header2-vert {
-    background: linear-gradient(180deg, var(--header-grad-3), var(--header-grad-4));
+    /* background: linear-gradient(180deg, var(--header-grad-3), var(--header-grad-4));
     text-shadow: none;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: var(--header-grad-3);
     max-width: max-content;
 }
 

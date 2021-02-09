@@ -229,8 +229,9 @@ function opengallerySingle(isVideo, src) {
   container.find('#gallery-single-txt-pointer').remove(); //remove scroll down button
   if ($(`#gallery-card-${id} .gallery-single-txt`).length != 0) { //add scroll down button
     container.append(
-      '<a id="gallery-single-txt-pointer" href="#gallery-single-txt-header"><i class="fas fa-arrow-circle-down"></i></a>')
-    .click(function() {
+      '<a id="gallery-single-txt-pointer""><i class="fas fa-arrow-circle-down"></i></a>')
+    $('#gallery-single-txt-pointer').click(function() {
+      bottomFunction();
       setTimeout(function() {
         container.focus(); //give the new scroll button a click event to focus the main container again (arrow buttons)
       }, 100);
@@ -351,7 +352,14 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
-} 
+}
+
+function bottomFunction() {
+  if (isGallerySingleOpen()) {
+    console.log('x')
+    $('#gallery-single-container').animate({ scrollTop: $('#gallery-single-container').height() }, 200);
+  }
+}
 
 /*******
 Settings

@@ -3,6 +3,11 @@ CSS code for less than or equal to 680px width:
 *********/
 
 @media screen and (max-width: 880px) {
+
+    #about-layout {
+        --hex-size: 0.8;
+    }
+
     .it-preview {
         flex-direction: column;
     }

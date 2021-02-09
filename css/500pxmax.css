@@ -1,6 +1,11 @@
 @media screen and (max-width: 500px) {
     #about-layout {
         width: 95%;
+        --hex-size: 1.5;
+    }
+
+    #gallery {
+        width: 90%;
     }
 
     .gallery-card {

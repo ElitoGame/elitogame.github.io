@@ -5,7 +5,7 @@
 
 <head>
     <title>ElitoGame's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet"> -->
     <script src="https://kit.fontawesome.com/1275efd285.js" crossorigin="anonymous"></script>
     <style>
         @import url(css/main.css);
@@ -56,9 +56,10 @@
             </div>
             
         </nav>
-        <video class="svg" autoplay loop>
-            <source src="rsc/Planet/icon_animation.webm" type='video/webm' codecs="H.264 (x264)">
-            <source src="rsc/Planet/icon_animation.mv4" type='video/mp4' codecs="vp9"> <!-- <- Looks horrible but compatibility...-->
+        <video class="svg" autoplay loop muted>
+            <source src="rsc/Planet/icon_animation.mp4" type='video/mp4' codecs="H.264"> 
+            <source src="rsc/Planet/icon_animation.webm" type='video/webm' codecs="vp9">
+            <!-- <source src="rsc/Planet/icon_animation.mv4" type='video/mv4' codecs="H.264 (x264)">  -->
         </video>
         <img src="rsc/Hero/hero2_gray.png" id="hero">
 
@@ -355,6 +356,79 @@
                                     <p class="it-preview-lang-singl-txt">JavaScript</p>
                                 </div>
                                 <div class="it-preview-lang-singl">
+                                    <i class="fab fa-html5"></i>
+                                    <p class="it-preview-lang-singl-txt">HTML</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <p class="it-preview-lang-singl-txt">CSS</p>
+                                </div>
+                            </div>
+                            <div class="it-preview-info-c">
+                                <h3 class="gradient-header2 it-preview-title">Web Development</h3>
+                                <div class="it-preview-text">
+                                    I really enjoy Web Development and this Website is my flagship. Over the last
+                                    few months, I have been working on this Project in my freetime preparing it to work
+                                    as my online portfolio for both my IT and Art experience.<br>
+                                    <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
+                                </div>
+                            </div>
+                        </div> 
+                        <img src="rsc/SlideShow/WebDevelopment/preview.png" alt="Website Preview" class="it-preview-img"> 
+                    </div>
+                    <div class="it-article" tabindex="0">
+                        <button class="it-article-close" onclick="closeContainer()">⨉</button>
+                        <div class="it-article-text">
+                            <h3 class="gradient-header2 it-preview-title">Web Development</h3>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+                                <span class="slideshow-loader"></span>
+                        
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <img src="rsc/SlideShow/WebDevelopment/LandingPage.png" style="width:100%"
+                                        alt="Landing Page & Themes">
+                                    <div class="text">Landing Page & Themes
+                                    </div>
+                                </div>
+                        
+                        
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
+                            </div>
+                            <div style="text-align:center" class="dotainer"></div>
+                            <div class="quick-profile">
+                                <h4>Quick Profile:</h4>
+                                <p><strong>Type:</strong> Website</p>
+                                <p><strong>Language(s):</strong> JavaScript, JQuery, HTML, CSS</p>
+                            </div>
+                            <p>
+                                For the last couple of months it became clear to me that I was going to apply for a
+                                IT based University. So in order to compensate for my lack of proper IT education in school,
+                                I started working on this Website to showcase my projects and experience.
+                            </p>
+                            <p>
+                                This Website is not my first attempt at a Website, though it's the first one reaching 
+                                this state of completion. As it's hosted via GitHub pages, the process of this Website's development is 
+                                documented on my <a href="https://github.com/ElitoGame/elitogame.github.io" target="_blank">GitHub</a>.
+                                For this project, I have made use of free Google Fonts, the capabilities of JQuery and the amazing Fonts by
+                                Font Awesome.
+                            </p>
+                        </div>
+                        <div class="cover-background cover-background-it"></div>
+                    </div>
+                </article>
+                <article>
+                    <div class="it-preview even">
+                        <img src="rsc/SlideShow/DnDBot/preview.png" alt="DnDBot Preview" class="it-preview-img">
+                        <div class="it-preview-info">
+                            <div class="it-preview-langs">
+                                <div class="it-preview-lang-singl">
+                                    <i class="fab fa-js-square"></i>
+                                    <p class="it-preview-lang-singl-txt">JavaScript</p>
+                                </div>
+                                <div class="it-preview-lang-singl">
                                     <i class="fab fa-node-js"></i>
                                     <p class="it-preview-lang-singl-txt">Node.JS</p>
                                 </div>
@@ -371,7 +445,6 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="rsc/SlideShow/DnDBot/preview.png" alt="DnDBot Preview" class="it-preview-img">
                     </div>
                     <div class="it-article" tabindex="0">
                         <button class="it-article-close" onclick="closeContainer()">⨉</button>
@@ -426,8 +499,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="it-preview even">  
-                        <img src="rsc/SlideShow/Other/preview.png" alt="GoDot & Electron Preview" class="it-preview-img">
+                    <div class="it-preview uneven">
                         <div class="it-preview-info">
                             <div class="it-preview-langs">
                                 <div class="it-preview-lang-singl">
@@ -444,7 +516,8 @@
                                     <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>  
+                        <img src="rsc/SlideShow/Other/preview.png" alt="GoDot & Electron Preview" class="it-preview-img">
                     </div>
                     <div class="it-article" tabindex="0">
                         <button class="it-article-close" onclick="closeContainer()">⨉</button>
@@ -529,78 +602,6 @@
                                     in the basic movement for the character including a double jump and wall jump.
                                 </li>
                             </ul>
-                        </div>
-                        <div class="cover-background cover-background-it"></div>
-                    </div>
-                </article>
-                <article>
-                    <div class="it-preview uneven">
-                        <div class="it-preview-info">
-                            <div class="it-preview-langs">
-                                <div class="it-preview-lang-singl">
-                                    <i class="fab fa-js-square"></i>
-                                    <p class="it-preview-lang-singl-txt">JavaScript</p>
-                                </div>
-                                <div class="it-preview-lang-singl">
-                                    <i class="fab fa-html5"></i>
-                                    <p class="it-preview-lang-singl-txt">HTML</p>
-                                </div>
-                                <div class="it-preview-lang-singl">
-                                    <i class="fab fa-css3-alt"></i>
-                                    <p class="it-preview-lang-singl-txt">CSS</p>
-                                </div>
-                            </div>
-                            <div class="it-preview-info-c">
-                                <h3 class="gradient-header2 it-preview-title">Web Development</h3>
-                                <div class="it-preview-text">
-                                    I really enjoy Web Development and this Website is my flagship. Over the last
-                                    few months, I have been working on this Project in my freetime preparing it to work
-                                    as my online portfolio for both my IT and Art experience.<br>
-                                    <button class="it-preview-more" onclick="openItExperienceSingle()">Read more...</button>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="rsc/SlideShow/WebDevelopment/preview.png" alt="Website Preview" class="it-preview-img">  
-                    </div>
-                    <div class="it-article" tabindex="0">
-                        <button class="it-article-close" onclick="closeContainer()">⨉</button>
-                        <div class="it-article-text">
-                            <h3 class="gradient-header2 it-preview-title">Web Development</h3>
-                            <!-- Slideshow container -->
-                            <div class="slideshow-container">
-                                <span class="slideshow-loader"></span>
-                        
-                                <!-- Full-width images with number and caption text -->
-                                <div class="mySlides fade">
-                                    <img src="rsc/SlideShow/WebDevelopment/LandingPage.png" style="width:100%"
-                                        alt="Landing Page & Themes">
-                                    <div class="text">Landing Page & Themes
-                                    </div>
-                                </div>
-                        
-                        
-                                <!-- Next and previous buttons -->
-                                <a class="prev" onclick="plusSlides(this, -1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(this, 1)">&#10095;</a>
-                            </div>
-                            <div style="text-align:center" class="dotainer"></div>
-                            <div class="quick-profile">
-                                <h4>Quick Profile:</h4>
-                                <p><strong>Type:</strong> Website</p>
-                                <p><strong>Language(s):</strong> JavaScript, JQuery, HTML, CSS</p>
-                            </div>
-                            <p>
-                                For the last couple of months it became clear to me that I was going to apply for a
-                                IT based University. So in order to compensate for my lack of proper IT education in school,
-                                I started working on this Website to showcase my projects and experience.
-                            </p>
-                            <p>
-                                This Website is not my first attempt at a Website, though it's the first one reaching 
-                                this state of completion. As it's hosted via GitHub pages, the process of this Website's development is 
-                                documented on my <a href="https://github.com/ElitoGame/elitogame.github.io" target="_blank">GitHub</a>.
-                                For this project, I have made use of free Google Fonts, the capabilities of JQuery and the amazing Fonts by
-                                Font Awesome.
-                            </p>
                         </div>
                         <div class="cover-background cover-background-it"></div>
                     </div>

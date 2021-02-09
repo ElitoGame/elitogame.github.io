@@ -86,6 +86,10 @@ CSS code for less than or equal to 680px width:
 
     }
 
+    #about-layout {
+        --hex-size: 1;
+    }
+
     #about-text {
         margin-left: 1rem;
         margin-right: 1rem;
