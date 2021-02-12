@@ -12,11 +12,12 @@
         width: 100%;
     }
 
-    .it-article-text {
-        margin: 0px;
+    .it-intro .it-preview-info-c {
+        position: static;
+        transform: none;
     }
 
-    #it-experience article {
+    .it-articles {
         width: 90%;
     }
 }

@@ -8,6 +8,24 @@ CSS code for less than or equal to 680px width:
         --hex-size: 0.8;
     }
 
+    #it-experience article {
+        width: 100%;
+    }
+
+    .it-preview {
+        padding: 3rem 0px;
+        height: calc(100% - 6rem);
+    }
+
+    #it-languages ul {
+        padding-top: 2.8rem;
+        margin: auto;
+    }
+
+    #it-languages *:not(.li-svg) {
+        width: max-content;
+    }
+/* 
     .it-preview {
         flex-direction: column;
     }
@@ -48,5 +66,5 @@ CSS code for less than or equal to 680px width:
         left: auto;
         right: 0.2rem;
         padding-top: 0px;
-    }
+    } */
 }

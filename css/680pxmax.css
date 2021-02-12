@@ -95,6 +95,28 @@ CSS code for less than or equal to 680px width:
         margin-right: 1rem;
     }
 
+    .it-preview {
+        grid-template:
+            'it-img'
+            'it-info';
+    }
+
+    .it-intro-prev {
+        flex-direction: column;
+    }
+
+    .it-intro-prev > div {
+        width: 100%;
+    }
+
+    #it-languages ul {
+        padding-top: 1rem;
+    }
+
+    .it-preview-img {
+        margin-bottom: 1rem;
+    }
+/* 
     #it-experience article {
         width: 80%;
     }
@@ -102,7 +124,7 @@ CSS code for less than or equal to 680px width:
     .it-article-text {
         margin-left: 2rem;
         margin-right: 2rem;
-    }
+    } */
 
     .gallery-card {
         width: 50%;

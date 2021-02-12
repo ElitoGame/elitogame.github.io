@@ -146,10 +146,9 @@ IT-Experience:
 }
 
 #it-experience article {
-    width: 70%;
     position: relative;
-    margin: auto;
     align-items: center;
+    width: 50%;
 }
 
 
@@ -157,8 +156,21 @@ IT-Experience:
 New System below:
 */
 
-.it-preview {
+.it-articles {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto;
+}
+
+.it-preview {
+    display: grid;
+    grid-template: 
+        'it-info it-img';
+    grid-template-columns: repeat(1fr, 2);
+    padding: 2rem 0px;
+    height: calc(100% - 4rem);
 }
 
 .it-preview.uneven {
@@ -169,23 +181,25 @@ New System below:
     background-color: var(--it-article-even);
 }
 
-.it-preview-info {
-    width: 50%;
-    /* display: flex;
-    flex-direction: column; */
-}
-
 .it-preview-img{
-   width: 50%;
+   width: 95%;
+   border-radius: 50%;
+   grid-area: it-img;
 }
 
 .it-preview-info-c {
-    width: max-content;
+    /* width: max-content; */
     max-width: 80%;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: max-content;
+    grid-area: it-info;
+}
+
+.it-intro .it-preview-info-c {
+    max-width: 94%;
 }
 
 .it-preview-title {
@@ -203,6 +217,10 @@ New System below:
 
 .it-preview-text {
     padding-bottom: 1rem;
+}
+
+.it-intro .it-preview-text {
+    padding-right: 2rem;
 }
 
 
@@ -254,7 +272,16 @@ New System below:
 }
 
 .it-intro {
-    padding: 1rem 0px;
+    width: 100% !important;
+}
+
+.it-intro-prev {
+    display: flex;
+}
+
+.it-intro-prev > div {
+    width: 50%;
+    padding-left: 1rem;
 }
 
 .it-intro h3 {
@@ -273,12 +300,24 @@ New System below:
     transform: translateY(-50%); */
 }
 
-.it-preview-info .it-preview-langs {
+.li-svg {
+   left: -1.5em; 
+}
+
+.li-svg .icon {
+    color: var(--link-color);
+}
+
+.it-preview .it-preview-langs {
     display: flex;
     position: absolute;
     padding-top: 1rem;
+    top: 0px;
+    flex-direction: row;
+    left: 1.2rem;
+    cursor: pointer;
 }
-
+/* 
 .even .it-preview-langs {
     flex-direction: row-reverse;
     right: 0.2rem;
@@ -289,10 +328,12 @@ New System below:
     flex-direction: row;
     left: 1.2rem;
     cursor: pointer;
-}
+} */
 
 #it-languages {
     font-size: 1.1rem;
+    position: relative;
+    left: 2.2rem;
 }
 
 .it-preview-langs * {

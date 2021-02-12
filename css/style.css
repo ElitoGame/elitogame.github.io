@@ -446,3 +446,10 @@ ToTop button
     width: 2.1rem;
     height: 2.1rem;
 }
+
+.icon-Logo {
+    padding-left: 1rem;
+    width: 12rem;
+    height: 12rem;
+    color: var(--header-grad-2);
+  }
