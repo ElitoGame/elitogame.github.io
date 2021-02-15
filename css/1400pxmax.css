@@ -1,0 +1,9 @@
+@media screen and (max-width: 1400px) {
+    .gallery-card {
+        width: 33.333333%;
+    }
+
+    #about-layout {
+        --hex-size: 0.57;
+    }
+}

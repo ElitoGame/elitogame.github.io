@@ -248,6 +248,9 @@ function isGallerySingleOpen() {
 }
 
 function closeContainer() {
+  if (isGallerySingleOpen()) {
+    $('html').css('scroll-behavior', 'auto'); //fix the jump animation when closing
+  }
   unlockScroll();
   $('#gallery-single-container').css('display','none');
   $('.it-article').css('display','none');
@@ -255,6 +258,7 @@ function closeContainer() {
   $('.cover-background').each(function() {
     $(this).height('1vh');
   });
+  $('html').css('scroll-behavior', 'smooth'); //reset scrolling to be smooth again #fix
 }
 
 function removeGalleryInfo() {

@@ -1,8 +1,8 @@
 /*********
-CSS code for less than or equal to 680px width: 
+CSS code for less than or equal to 724px width: 
 *********/
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 724px) {
     .dropitem {
         visibility: hidden;
     }
@@ -116,6 +116,15 @@ CSS code for less than or equal to 680px width:
     .it-preview-img {
         margin-bottom: 1rem;
     }
+
+    .it-intro .it-preview-info-c {
+        position: static;
+        transform: none;
+    }
+
+    #it-languages {
+        left: 0px;
+    }
 /* 
     #it-experience article {
         width: 80%;
@@ -127,6 +136,6 @@ CSS code for less than or equal to 680px width:
     } */
 
     .gallery-card {
-        width: 50%;
+        width: 100%;
     }
 }

@@ -22,8 +22,15 @@ CSS code for less than or equal to 680px width:
         margin: auto;
     }
 
-    #it-languages *:not(.li-svg) {
+    #it-languages *:not(.li-svg *) {
         width: max-content;
+    }
+
+    .li-svg {
+        left: -2em; 
+    }
+    .li-svg .icon {
+        padding-right: 0.5em; 
     }
 /* 
     .it-preview {
