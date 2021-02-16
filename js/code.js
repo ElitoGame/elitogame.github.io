@@ -78,7 +78,6 @@ function setupSlides() {
     $(this).find('.mySlides').each(function (e) {
       i++;
       $(this).parent().parent().find('.dotainer').append(`<span class="dot" onclick="currentSlide(this, ${i})"></span>`);
-      $(this).append(`<div class="numbertext">${i} / ${len}</div>`);
     });
   });
   document.querySelectorAll('.slideshow-loader').forEach(function (e) { showSlides(e, slideIndex) });
