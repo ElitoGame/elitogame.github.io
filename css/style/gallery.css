@@ -170,6 +170,15 @@ gallery:
     font-weight: normal;
 }
 
+.gallery-single-program {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1.5rem;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: var(--link-color);
+}
+
 #gallery-single-txt-pointer {
     position: absolute;
     left: 50%;

@@ -77,6 +77,10 @@ CSS code for less than or equal to 724px width:
         border-radius: 5px;
         transition: opacity .15s ease-out;
     }
+    /*Fix bug with nav glitching out:*/
+    nav .hamburger:not(.open) ~ .dropitem {
+        display: none;
+    }
 
     .settings {
         position: absolute;

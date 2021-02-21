@@ -16,6 +16,7 @@ $(document).ready(function () {
   addGalleryClick();
   addSettingsClick();
   loadTheme();
+  removeAnchorUpdate();
 });
 
 window.onresize = function () {
@@ -27,11 +28,12 @@ window.onresize = function () {
     });
   } else if (isGallerySingleOpen()) {
       $('#cover-background-gallery').height($('#gallery-single-container').get(0).scrollHeight);
+      $('#gallery-single-container').css('top', self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop);
   }
 }
 
 /*********
-Handle the below 680px Navbar hamburger:
+Handle the below 724px Navbar hamburger:
 *********/
 function initHamburger() {
   const burger = $('nav .hamburger')
@@ -121,6 +123,7 @@ function addGalleryClick() {
     let src = el.attr('src').replace('/preview', '').replace('_preview', '');
     opengallerySingle($(this).hasClass('gallery-card-video'), src);
     lockScroll();
+    container.css('top', self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop);
     $('.cover-background').height(container.get(0).scrollHeight);
     container.focus();
   })
@@ -223,6 +226,9 @@ function opengallerySingle(isVideo, src) {
   let id = src.match('(?<=portfolio_).+?(?=[\_.])')[0]; //get the id
   container.append(`<h3 class=gallery-single-title>
     ${$(`#gallery-card-${id} .gallery-card-title`).get(0).innerHTML}</h3>`); //title
+  container.find('.gallery-single-program').remove();
+  container.append(`<p class=gallery-single-program>
+    ${$(`#gallery-card-${id} .gallery-card-program`).get(0).innerHTML}</p>`); //program used
   container.find('.gallery-single-txt').remove(); //remove previous texts
   
   container.find('#gallery-single-txt-pointer').remove(); //remove scroll down button
@@ -454,4 +460,17 @@ function loadTheme() {
     body.toggleClass('pauseanim');
   }
   
+}
+
+function removeAnchorUpdate() {
+  $('a.nav').each(function () {
+    $(this).on('click', function(e){
+      e.preventDefault();
+      const elem = this; // save it so we can use it in the animate
+  
+      $('html, body').animate({
+          scrollTop: $( $(elem).attr('href') ).offset().top
+       }, 500);
+    });
+  });
 }
