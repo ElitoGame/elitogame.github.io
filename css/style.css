@@ -421,6 +421,7 @@ ToTop button
     border-color: transparent;
     z-index: 300;
     transition: 1s;
+    outline: none;
 }
 
 #totop i {

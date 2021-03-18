@@ -116,6 +116,7 @@ gallery:
     z-index: 200;
     overflow-y: scroll; /*auto*/
     scroll-behavior: smooth;
+    outline: none;
 }
 
 #gallery-single-container *{

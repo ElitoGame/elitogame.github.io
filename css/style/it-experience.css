@@ -244,6 +244,7 @@ New System below:
     overflow-y: scroll;
     scroll-behavior: smooth;
     display: none;
+    outline: none;
 }
 
 .it-article * {
