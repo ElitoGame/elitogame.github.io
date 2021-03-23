@@ -367,6 +367,8 @@ function bottomFunction() {
   if (isGallerySingleOpen()) {
     console.log('x')
     $('#gallery-single-container').animate({ scrollTop: $('#gallery-single-container').height() }, 200);
+  } else {
+    window.scrollTo(0, $('html').height())
   }
 }
 
@@ -473,4 +475,12 @@ function removeAnchorUpdate() {
        }, 500);
     });
   });
+}
+
+/******
+Button Functions 
+******/
+function toggle_impressum() {
+  $('footer .impressum').toggleClass('hidden');
+  bottomFunction()
 }

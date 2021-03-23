@@ -175,6 +175,15 @@ footer p {
     padding: 0px 0.5rem;
 }
 
+footer button {
+    font-family: inherit;
+    border: 5px solid var(--it-article-uneven);
+    border-radius: 5px;
+    background-color: var(--it-article-uneven);
+    color: var(--basic-text-color);
+    outline: none;
+}
+
 /*********
 Headers & vertical text: 
 *********/
