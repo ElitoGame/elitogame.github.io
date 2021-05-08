@@ -1,0 +1,55 @@
+:root {
+  --background-color: #12181a;
+  --basic-text-color: rgb(189, 189, 189);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Neue", sans-serif;
+  color: var(--basic-text-color);
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 4rem;
+  background-color: grey;
+  position: fixed;
+}
+nav .menu_options {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+nav.bottom_menu {
+  bottom: 0;
+}
+
+nav.top_menu {
+  top: 0;
+}
+
+main {
+  position: relative;
+  top: 3.5rem;
+}
+main #main_top #main_settings {
+  position: relative;
+  right: -2rem;
+  width: max-content;
+  margin: 0px;
+}
+main section#todo_container {
+  padding: 0rem 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

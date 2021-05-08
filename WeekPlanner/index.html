@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A PWA to Plan your week!">
+    <meta name="theme-color" content="#12181A">
+    <link rel="manifest" href="/WeekPlanner/manifest.json">
+    <link href="/WeekPlanner/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/icons/apple-icon-180.png">
+    <title>WeekPlanner</title>
+
+    <!-- <style>
+        @import url(/WeekPlanner/css/style.css);
+    </style> -->
+    <script type="text/javascript" src="WeekPlanner/js/code.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <nav class="top_menu">
+        <div class="menu_options">
+            <button id="addtask" onclick="addTask()">←</button>
+        </div>
+    </nav>
+
+    <main>
+        <div id="main_top">  
+            <header>
+                <h1>Week-Plan</h1>
+                <span id="main_settings">⁝</span>
+            </header>
+        </div>
+        <section id="todo_container">
+            <div id="day_1">
+                <h2 id="day_1_title" class="task_title"></h2>
+                <div id="day_1_tasks" class="task_container">
+
+                </div>
+            </div>
+            <div id="day_2">
+                <h2 id="day_2_title" class="task_title"></h2>
+                <div id="day_2_tasks" class="task_container">
+
+                </div>
+            </div>
+            <div id="day_3">
+                <h2 id="day_3_title" class="task_title"></h2>
+                <div id="day_3_tasks" class="task_container">
+
+                </div>
+            </div>
+            <div id="day_4">
+                <h2 id="day_4_title" class="task_title"></h2>
+                <div id="day_4_tasks" class="task_container">
+
+                </div>
+            </div>
+            <div id="day_5">
+                <h2 id="day_5_title" class="task_title"></h2>
+                <div id="day_5_tasks" class="task_container">
+
+                </div>
+            </div>
+            <div id="day_6">
+                <h2 id="day_6_title" class="task_title"></h2>
+                <div id="day_6_tasks" class="task_container">
+
+                </div>
+            </div>
+            <div id="day_7">
+                <h2 id="day_7_title" class="task_title"></h2>
+                <div id="day_7_tasks" class="task_container">
+
+                </div>
+            </div>
+        </section>
+    </main>
+        
+    <nav class="bottom_menu">
+        <div class="menu_options">
+            <button id="addtask" onclick="addTask()">+</button>
+        </div>
+    </nav>
+
+
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/WeekPlanner/sw.js', { scope: '/WeekPlanner/' }).then(function(registration) {
+            console.log('Service worker registration succeeded:', registration);
+          }).catch(function(error) {
+            console.log('Service worker registration failed:', error);
+          });
+        } else {
+          console.log('Service workers are not supported.');
+        }
+    </script>
+</body>
+</html>

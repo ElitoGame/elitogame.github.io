@@ -4,7 +4,7 @@ Base styling & variables:
 
 :root {
     /* Background Color: */
-    --background-color: rgb(18, 24, 26);
+    --background-color: #12181a;
     /* Basic Text: */
     --basic-text-color: rgb(189, 189, 189);
     /* Links & Lines: */
