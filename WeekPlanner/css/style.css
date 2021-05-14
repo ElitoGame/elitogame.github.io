@@ -75,22 +75,29 @@ main section#todo_container .task_title {
 main section#todo_container .task_container {
   min-height: 1.4rem;
   padding: 2rem 0;
-  margin: 0px;
-  position: relative;
-  top: -1rem;
+  margin: 0;
 }
 main section#todo_container .task_container .task {
   position: relative;
   user-select: none;
-  width: 90%;
   background-color: #504747;
   border-radius: 5px;
   margin: 0 5px 5px 1%;
   padding: 5px;
   list-style-type: none;
+  display: flex;
+  vertical-align: center;
 }
-main section#todo_container .task_container .task_handl {
-  margin: 0 1%;
+main section#todo_container .task_container .task .task_content {
+  width: 100%;
+  padding: 7px 0 0 5px;
+  min-height: 1.3125rem;
+}
+main section#todo_container .task_container .task .task_handl {
+  padding: 5px;
+}
+main section#todo_container .task_container .task .complete_box {
+  margin: 9px 1% 0 1%;
 }
 
 /*# sourceMappingURL=style.css.map */

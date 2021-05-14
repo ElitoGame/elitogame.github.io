@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/WeekPlanner/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/WeekPlanner/js/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="/WeekPlanner/js/code.js"></script>
+    <script type="text/javascript" src="/WeekPlanner/js/idb.min.js"></script>
 
     <title>WeekPlanner</title>
 
@@ -36,59 +37,14 @@
             </header>
         </div>
         <section id="todo_container">
-            <div id="day_1" class="day_container">
-                <h2 id="day_1_title" class="task_title"></h2>
-                <ul id="day_1_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>1</li>
-                    <li class="task"><span class="task_handl">⠿</span>2</li>
-                    <li class="task"><span class="task_handl">⠿</span>3</li>
-                </ul>
-            </div>
-            <div id="day_2" class="day_container">
-                <h2 id="day_2_title" class="task_title"></h2>
-                <ul id="day_2_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>4</li>
-                    <li class="task"><span class="task_handl">⠿</span>5</li>
-                </ul>
-            </div>
-            <div id="day_3" class="day_container">
-                <h2 id="day_3_title" class="task_title"></h2>
-                <ul id="day_3_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>6</li>
-                    <li class="task"><span class="task_handl">⠿</span>7</li>
-                </ul>
-            </div>
-            <div id="day_4" class="day_container">
-                <h2 id="day_4_title" class="task_title"></h2>
-                <ul id="day_4_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>8</li>
-                </ul>
-            </div>
-            <div id="day_5" class="day_container">
-                <h2 id="day_5_title" class="task_title"></h2>
-                <ul id="day_5_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>9</li>
-                </ul>
-            </div>
-            <div id="day_6" class="day_container">
-                <h2 id="day_6_title" class="task_title"></h2>
-                <ul id="day_6_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>10</li>
-                </ul>
-            </div>
-            <div id="day_7" class="day_container">
-                <h2 id="day_7_title" class="task_title"></h2>
-                <ul id="day_7_tasks" class="task_container">
-                    <li class="task"><span class="task_handl">⠿</span>11</li>
-                </ul>
-            </div>
-            
+          <!-- Task section will be loaded here! -->
         </section>
     </main>
         
     <nav class="bottom_menu">
         <div class="menu_options">
             <button id="addtask" onclick="addTask()">🞤</button>
+            <button id="clearcompleted" onclick="clearCompleted()">🗑</button>
         </div>
     </nav>
 
