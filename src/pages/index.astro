@@ -1,0 +1,218 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import IndexNav from "../components/IndexNav.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import { getContentPieces } from "virtual:vrite";
+import Tag from "../components/Tag";
+
+const posts = await getContentPieces({
+	limit: "all",
+	// variant: "64c3e36dd93d9cb743408e19",
+});
+
+const age =
+	new Date(
+		new Date().getTime() - new Date(2002, 2, 30).getTime()
+	).getFullYear() - 1970;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script>
+			if (!import.meta.env.SSR) {
+				const currentURL = window.location.href;
+				const cleanURL = currentURL.split("#")[0];
+				history.replaceState({}, document.title, cleanURL);
+			}
+		</script>
+	</head>
+	<body
+		class='bg-background dark:bg-background_dark text-text dark:text-text_dark'
+	>
+		<IndexNav title={SITE_TITLE} />
+		<header class='h-screen flex flex-col justify-center'>
+			<div
+				class='flex flex-col-reverse md:flex-row gap-16 justify-center items-center'
+			>
+				<div class='flex flex-col justify-center'>
+					<h1 class='text-4xl sm:text-6xl lg:text-8xl font-medium'>
+						Hey there,<br />
+						I'm <span class='gradient'>ElitoGame</span><br />
+					</h1>
+					<span class='text-3xl lg:text-5xl pt-0'>a web and game dev</span>
+				</div>
+				<img
+					src='/images/Icon.webp'
+					alt='Hero Profile Image'
+					width='340'
+					height='390'
+				/>
+			</div>
+		</header>
+		<main>
+			<section id='about'>
+				<h2 class='text-6xl font-medium mb-8'>About</h2>
+				<div class='flex flex-row gap-5 mb-36'>
+					<div class='w-1 h-auto rounded-lg bg-text dark:bg-text_dark'></div>
+					<p class='text-xl'>
+						Hey there, Elias aka ElitoGame (Elito) here! I'm an {age} years old game
+						& web developer living in Austria. I am currently a student, focused
+						on games, web, UI and more. I enjoy creating responsive and reusable
+						products and love consuming fantasy or sci-fi content in the form of
+						books, games, movies or tv shows!
+					</p>
+				</div>
+				<div
+					class='bg-background2 dark:bg-background2_dark flex flex-row rounded-lg relative'
+				>
+					<div class='top-24 md:top-1/2 md:-translate-y-1/2 absolute -left-24'>
+						<svg
+							width='288'
+							height='194'
+							viewBox='0 0 288 194'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+							class='absolute -translate-y-1/4'
+						>
+							<path
+								d='M-4.85196e-06 97L72 0.871182L216 0.871176L288 97L216 193.129L72 193.129L-4.85196e-06 97Z'
+								class='fill-background dark:fill-background_dark'
+							>
+							</path>
+						</svg>
+						<h3 class='text-5xl z-10 w-36 ml-24 relative'>My Skills</h3>
+					</div>
+					<!-- Skills thingy -->
+					<div
+						class='flex flex-row flex-wrap lg:flex-nowrap gap-8 items-start my-14 mr-8 ml-8 md:ml-52 mt-72 md:mt-14'
+					>
+						<div class='w-full md:w-5/12 lg:w-1/3'>
+							<div class='h-28'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									width='107'
+									height='98'
+									viewBox='0 0 107 98'
+									fill='none'
+								>
+									<path
+										d='M97.4722 0H8.86111C3.96904 0 0 4.11523 0 9.1875V70.4375C0 75.5098 3.96904 79.625 8.86111 79.625H44.3056L41.3518 88.8125H28.0602C25.6049 88.8125 23.6296 90.8605 23.6296 93.4062C23.6296 95.952 25.6049 98 28.0602 98H78.2731C80.7284 98 82.7037 95.952 82.7037 93.4062C82.7037 90.8605 80.7284 88.8125 78.2731 88.8125H64.9815L62.0278 79.625H97.4722C102.364 79.625 106.333 75.5098 106.333 70.4375V9.1875C106.333 4.11523 102.364 0 97.4722 0ZM94.5185 67.375H11.8148V12.25H94.5185V67.375Z'
+										class='fill-accent dark:fill-accent_dark'
+									>
+									</path>
+								</svg>
+							</div>
+							<h4 class='text-4xl'>Web</h4>
+							<p>
+								While I prefer frontend, I’ve experience with BaaS’s like
+								Firebase and CMS’s like Wordpress. My favourite frontend
+								framework is SolidJS, but I also tried React, Vue and Svelte.
+							</p>
+						</div>
+						<div class='w-full md:w-5/12 lg:w-1/3'>
+							<div class='h-28'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									width='126'
+									height='65'
+									viewBox='0 0 126 65'
+									fill='none'
+								>
+									<path
+										d='M94.2615 3.31595e-07H31.4189C26.2393 -0.000765053 21.1399 1.32347 16.5746 3.85481C12.0094 6.38616 8.11993 10.0461 5.2526 14.5087C2.38528 18.9713 0.62903 24.0982 0.140214 29.4329C-0.348602 34.7676 0.445181 40.1445 2.45089 45.0851C4.45661 50.0256 7.61201 54.3764 11.6362 57.7501C15.6604 61.1238 20.4285 63.4158 25.5159 64.422C30.6034 65.4281 35.8525 65.1172 40.7957 63.517C45.739 61.9168 50.2231 59.0768 53.8488 55.25H71.8179C75.4432 59.0764 79.9267 61.9161 84.8693 63.5165C89.8119 65.1168 95.0603 65.4281 100.147 64.4226C105.234 63.4172 110.002 61.1261 114.026 57.7535C118.051 54.3808 121.207 50.0311 123.213 45.0916C125.22 40.1521 126.015 34.7759 125.527 29.4417C125.04 24.1075 123.285 18.9807 120.42 14.5176C117.554 10.0545 113.666 6.39356 109.103 3.86069C104.539 1.32783 99.4405 0.00157933 94.2615 3.31595e-07ZM48.6968 34.9375C48.6968 35.584 48.4486 36.204 48.0068 36.6611C47.5649 37.1182 46.9656 37.375 46.3408 37.375H36.1311V47.9375C36.1311 48.584 35.8828 49.204 35.441 49.6611C34.9991 50.1182 34.3999 50.375 33.775 50.375H29.0628C28.438 50.375 27.8387 50.1182 27.3968 49.6611C26.955 49.204 26.7067 48.584 26.7067 47.9375V37.375H16.4971C15.8722 37.375 15.2729 37.1182 14.8311 36.6611C14.3892 36.204 14.141 35.584 14.141 34.9375V30.0625C14.141 29.416 14.3892 28.796 14.8311 28.3389C15.2729 27.8818 15.8722 27.625 16.4971 27.625H26.7067V17.0625C26.7067 16.416 26.955 15.796 27.3968 15.3389C27.8387 14.8818 28.438 14.625 29.0628 14.625H33.775C34.3999 14.625 34.9991 14.8818 35.441 15.3389C35.8828 15.796 36.1311 16.416 36.1311 17.0625V27.625H46.3408C46.9656 27.625 47.5649 27.8818 48.0068 28.3389C48.4486 28.796 48.6968 29.416 48.6968 30.0625V34.9375ZM91.1063 50.375C89.553 50.375 88.0346 49.8985 86.7431 49.0057C85.4516 48.1129 84.4449 46.844 83.8505 45.3593C83.2561 43.8747 83.1006 42.241 83.4036 40.6649C83.7066 39.0888 84.4546 37.6411 85.553 36.5048C86.6513 35.3685 88.0507 34.5946 89.5741 34.2811C91.0976 33.9676 92.6767 34.1285 94.1118 34.7435C95.5468 35.3584 96.7734 36.3998 97.6363 37.736C98.4993 39.0721 98.9599 40.643 98.9599 42.25C98.9599 44.4049 98.1325 46.4715 96.6596 47.9952C95.1868 49.519 93.1892 50.375 91.1063 50.375ZM103.672 30.875C102.119 30.875 100.6 30.3985 99.3088 29.5057C98.0173 28.6129 97.0107 27.344 96.4163 25.8593C95.8219 24.3747 95.6663 22.741 95.9694 21.1649C96.2724 19.5888 97.0204 18.1411 98.1187 17.0048C99.2171 15.8685 100.616 15.0946 102.14 14.7811C103.663 14.4676 105.242 14.6285 106.678 15.2435C108.113 15.8584 109.339 16.8998 110.202 18.236C111.065 19.5721 111.526 21.143 111.526 22.75C111.526 24.9049 110.698 26.9715 109.225 28.4952C107.753 30.019 105.755 30.875 103.672 30.875Z'
+										class='fill-accent dark:fill-accent_dark'></path>
+								</svg>
+							</div>
+							<h4 class='text-4xl'>Game Dev</h4>
+							<p>
+								I’ve worked with 2D and 3D games, participated in 3 Game Jams
+								and have experience in game engines like Unity, UE4/5 and Godot.
+							</p>
+						</div>
+						<div class='w-full md:w-5/12 lg:w-1/3'>
+							<div class='h-28'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									width='52'
+									height='84'
+									viewBox='0 0 52 84'
+									fill='none'
+								>
+									<path
+										d='M43.5268 0H8.34008C4.17737 0 0.800079 3.51422 0.800079 7.8457V75.8418C0.800079 80.1733 4.17737 83.6875 8.34008 83.6875H43.5268C47.6895 83.6875 51.0668 80.1733 51.0668 75.8418V7.8457C51.0668 3.51422 47.6895 0 43.5268 0ZM25.9334 78.457C23.153 78.457 20.9067 76.1197 20.9067 73.2266C20.9067 70.3335 23.153 67.9961 25.9334 67.9961C28.7138 67.9961 30.9601 70.3335 30.9601 73.2266C30.9601 76.1197 28.7138 78.457 25.9334 78.457ZM43.5268 60.8042C43.5268 61.883 42.6785 62.7656 41.6418 62.7656H10.2251C9.18833 62.7656 8.34008 61.883 8.34008 60.8042V9.80713C8.34008 8.72834 9.18833 7.8457 10.2251 7.8457H41.6418C42.6785 7.8457 43.5268 8.72834 43.5268 9.80713V60.8042Z'
+										class='fill-accent dark:fill-accent_dark'></path>
+								</svg>
+							</div>
+							<h4 class='text-4xl'>Apps</h4>
+							<p>
+								I have worked on mobile & desktop apps, though most of them have
+								been web based through frameworks like Electron, Tauri or via
+								PWAs.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id='projects' class='mt-64 mb-32'>
+				<h2 class='text-6xl font-medium mb-8'>Projects</h2>
+				<ul class='inline-flex items-start content-start gap-10 flex-wrap'>
+					{
+						posts.map((post) => (
+							<li
+								class='project_card w-96 h-auto rounded-xl bg-background2 dark:bg-background2_dark'
+								id={post.slug}
+							>
+								<div class='mb-5'>
+									<img
+										src={post.coverUrl}
+										alt={post.coverAlt}
+										class='rounded-xl'
+									/>
+								</div>
+								<div class='px-4'>
+									<div class='flex flex-col justify-between pb-5 gap-2'>
+										<h3 class='text-2xl'> {post.title} </h3>
+										<ul class='flex flex-row items-center gap-1'>
+											{post.tags.map((tag) => (
+												<li>
+													<Tag label={tag.label ?? ""} client:idle />
+												</li>
+											))}
+										</ul>
+									</div>
+									<p class='pb-6 h-20'>
+										{post.description?.replaceAll(/<.?p>/g, "")}
+									</p>
+									<a
+										class='pb-4 inline-block text-primary dark:text-primary_dark'
+										href={`/projects/${post.slug}/`}
+									>
+										Read More &#62;
+									</a>
+								</div>
+							</li>
+						))
+					}
+				</ul>
+				<style>
+					.project_card {
+						max-width: 83.5vw;
+					}
+				</style>
+			</section>
+		</main>
+		<Footer />
+		<style>
+			.gradient {
+				background: linear-gradient(90deg, #40d6ba 0%, #e0b843 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		</style>
+	</body>
+</html>

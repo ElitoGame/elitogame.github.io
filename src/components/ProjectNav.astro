@@ -1,0 +1,43 @@
+---
+import HeaderLink from "./HeaderLink.tsx";
+import { SITE_TITLE } from "../consts.ts";
+import ThemeToggle from "./ThemeToggle.tsx";
+import { client } from "virtual:vrite";
+import BackButton from "./BackButton.tsx";
+import LanguageToggle from "./LanguageToggle";
+
+const contentPiece = Astro.props;
+---
+
+<header>
+	<nav>
+		<div class='flex flex-col items-start gap-4'>
+			<div
+				class='flex flex-row gap-8 md:gap-16 justify-between pt-8 px-4 md:px-8 flex-wrap w-full'
+			>
+				<div class='flex flex-row gap-4 sm:gap-8 items-center'>
+					<img
+						src='/images/Icon.webp'
+						alt='profile picture'
+						width='72px'
+						height='72px'
+					/>
+					<span class='gradient text-2xl'>ElitoGame</span>
+				</div>
+				<div class='flex flex-row gap-8 md:gap-16'>
+					<!-- <LanguageToggle client:load client:only /> -->
+					<ThemeToggle client:load client:only />
+				</div>
+			</div>
+			<BackButton client:load client:only />
+		</div>
+	</nav>
+</header>
+<style>
+	.gradient {
+		background: linear-gradient(90deg, #40d6ba 0%, #e0b843 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+</style>

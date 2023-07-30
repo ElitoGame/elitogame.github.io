@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-23",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/rss": "^2.4.3",
+    "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/solid-js": "^2.2.0",
+    "@astrojs/tailwind": "^4.0.0",
+    "@vrite/sdk": "^2023.7.17-beta",
+    "astro": "^2.9.6",
+    "solid-js": "^1.7.8",
+    "tailwindcss": "^3.3.3"
+  }
+}
