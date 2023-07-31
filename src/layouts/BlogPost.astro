@@ -1,12 +1,9 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/ProjectNav.astro";
 import Footer from "../components/Footer.astro";
 
-type Props = CollectionEntry<"blog">["data"];
-
-const { title, description, heroImage } = Astro.props;
+const { title, description, heroImage, link } = Astro.props;
 ---
 
 <html lang='en'>
@@ -74,6 +71,43 @@ const { title, description, heroImage } = Astro.props;
 				box-shadow: var(--box-shadow);
 				margin-bottom: 1em;
 			}
+
+			.prose table {
+				width: 100%;
+				border-collapse: collapse;
+				border-spacing: 0;
+				margin-bottom: 1em;
+			}
+			.prose table thead {
+				background-color: #fafafa;
+				color: #050505;
+			}
+			.dark .prose table thead {
+				background-color: #050505;
+				color: #fafafa;
+			}
+			.prose table th,
+			.prose table td {
+				padding: 0.5em 1em;
+				border: 1px solid #050505;
+			}
+			.dark .prose table th,
+			.dark .prose table td {
+				border-color: #fafafa;
+			}
+			.prose table tr:nth-child(2n) {
+				background-color: #f0f0f0;
+			}
+			.dark .prose table tr:nth-child(2n) {
+				background-color: #121212;
+			}
+
+			pre {
+				padding: 1em;
+				border-radius: 12px;
+				overflow-x: auto;
+				margin-bottom: 1em;
+			}
 		</style>
 	</head>
 
@@ -92,8 +126,16 @@ const { title, description, heroImage } = Astro.props;
 				</div>
 				<div class='prose'>
 					<div class='title'>
-						<div class='date'></div>
 						<h1 class='text-3xl'>{title}</h1>
+						{
+							link && (
+								<p class='text-sm text-primary dark:text-primary_dark'>
+									<a href={link} target='_blank' rel='noopener noreferrer'>
+										Check it out here!
+									</a>
+								</p>
+							)
+						}
 						<hr />
 					</div>
 					<slot />

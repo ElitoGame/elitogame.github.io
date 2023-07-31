@@ -17,6 +17,14 @@ module.exports = {
 			secondary_dark: "#122121",
 			accent_dark: "#88702A",
 		},
+		extend: {
+			width: {
+				94: "23.5rem",
+				92: "23rem",
+				88: "22rem",
+				84: "21rem",
+			},
+		},
 	},
 	darkMode: "class",
 	plugins: [],
