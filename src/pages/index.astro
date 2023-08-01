@@ -21,7 +21,11 @@ const age =
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image="/images/Icon.webp"/>
+		<BaseHead
+			title={SITE_TITLE}
+			description={SITE_DESCRIPTION}
+			image='/images/Icon.webp'
+		/>
 		<script>
 			if (!import.meta.env.SSR) {
 				const currentURL = window.location.href;
@@ -59,7 +63,7 @@ const age =
 				<div class='flex flex-row gap-5 mb-36'>
 					<div class='w-1 h-auto rounded-lg bg-text dark:bg-text_dark'></div>
 					<p class='text-xl'>
-						Hey there, Elias aka ElitoGame (Elito) here! I'm an {age} years old game
+						Hey there, Elias aka ElitoGame (Elito) here! I'm a {age} year old game
 						& web developer living in Austria. I am currently a student, focused
 						on games, web, UI and more. I enjoy creating responsive and reusable
 						products and love consuming fantasy or sci-fi content in the form of
