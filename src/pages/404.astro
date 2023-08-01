@@ -1,0 +1,28 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<BaseHead title={"404: " + SITE_TITLE} description={SITE_DESCRIPTION} image="/images/404.webp"/>
+		<script>
+			if (!import.meta.env.SSR) {
+				const currentURL = window.location.href;
+				const cleanURL = currentURL.split("#")[0];
+				history.replaceState({}, document.title, cleanURL);
+			}
+		</script>
+	</head>
+	<body
+		class='bg-background dark:bg-background_dark text-text dark:text-text_dark h-screen relative'
+	>
+        <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+            <img src="/images/404.webp" alt="404 Image" class="mb-8">
+            <h1 class="text-4xl font-bold text-center"><span class="text-primary dark:text-primary_dark mb-4">404:</span> Not found</h1>
+            <p class="text-xl text-center mb-4">The page "{Astro.url}" does not exist.</p>
+            <a href="/" class="text-center block text-primary dark:text-primary_dark underline">Return to Home</a>
+        </div>
+    </body>
+</html>
