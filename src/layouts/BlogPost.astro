@@ -3,12 +3,16 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/ProjectNav.astro";
 import Footer from "../components/Footer.astro";
 
-const { title, description, heroImage, link } = Astro.props;
+const { title, description, heroImage, link, slug } = Astro.props;
 ---
 
 <html lang='en'>
 	<head>
-		<BaseHead title={title} description={description} image="/images/Icon.webp" />
+		<BaseHead
+			title={title}
+			description={description}
+			image='/images/Icon.webp'
+		/>
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -117,7 +121,7 @@ const { title, description, heroImage, link } = Astro.props;
 		<Header />
 		<main>
 			<article>
-				<div class='hero-image'>
+				<div class='hero-image' transition:name={slug}>
 					{
 						heroImage && (
 							<img width={1020} height={510} src={heroImage} alt='' />

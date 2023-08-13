@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -41,14 +42,29 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
 
+<ViewTransitions />
+
 <script>
-	if (
-		localStorage.theme === "dark" ||
-		(!("theme" in localStorage) &&
-			window.matchMedia("(prefers-color-scheme: dark)").matches)
-	) {
-		document.documentElement.classList.add("dark");
-	} else {
-		document.documentElement.classList.remove("dark");
+	function setDarkMode() {
+		if (
+			localStorage.theme === "dark" ||
+			(!("theme" in localStorage) &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches)
+		) {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+		}
 	}
+	setDarkMode();
+	function removeAnchorTag() {
+		if (!import.meta.env.SSR) {
+			const currentURL = window.location.href;
+			const cleanURL = currentURL.split("#")[0];
+			history.replaceState({}, document.title, cleanURL);
+		}
+	}
+	removeAnchorTag();
+	document.addEventListener("astro:beforeload", setDarkMode);
+	document.addEventListener("astro:beforeload", removeAnchorTag);
 </script>

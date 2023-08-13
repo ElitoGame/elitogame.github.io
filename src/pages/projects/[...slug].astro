@@ -15,6 +15,7 @@ const contentPiece = Astro.props;
 	pubDate={contentPiece.date ? new Date(contentPiece.date) : new Date()}
 	heroImage={contentPiece.coverUrl}
 	link={contentPiece.canonicalLink || ""}
+	slug={contentPiece.slug || ""}
 >
 	<Content contentPieceId={contentPiece.id} />
 </BlogPost>

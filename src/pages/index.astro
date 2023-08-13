@@ -26,13 +26,6 @@ const age =
 			description={SITE_DESCRIPTION}
 			image='/images/Icon.webp'
 		/>
-		<script>
-			if (!import.meta.env.SSR) {
-				const currentURL = window.location.href;
-				const cleanURL = currentURL.split("#")[0];
-				history.replaceState({}, document.title, cleanURL);
-			}
-		</script>
 	</head>
 	<body
 		class='bg-background dark:bg-background_dark text-text dark:text-text_dark'
@@ -177,6 +170,7 @@ const age =
 										src={post.coverUrl}
 										alt={post.coverAlt}
 										class='rounded-xl'
+										transition:name={post.slug}
 									/>
 								</div>
 								<div class='px-4'>
@@ -195,7 +189,7 @@ const age =
 									</p>
 									<a
 										class='pb-4 inline-block text-primary dark:text-primary_dark'
-										href={`/projects/${post.slug}/`}
+										href={`/projects/${post.slug}`}
 									>
 										Read More &#62;
 									</a>

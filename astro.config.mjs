@@ -16,6 +16,9 @@ const { VRITE_ACCESS_TOKEN, VRITE_CONTENT_GROUP_ID } = loadEnv(
 // https://astro.build/config
 export default defineConfig({
 	site: "https://elitogame.github.io",
+	experimental: {
+		viewTransitions: true,
+	},
 	integrations: [
 		mdx(),
 		sitemap(),
